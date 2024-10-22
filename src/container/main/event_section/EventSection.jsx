@@ -2,14 +2,14 @@ import styles from "./EventSection.module.css";
 
 const EventSection = () => {
   return (
-    <section className={styles.container}>
+    <section className={styles.section}>
       <div>
         <div>2020</div>
         <h2>Heading</h2>
       </div>
       <h3>Intro text</h3>
       <button>read more</button>
-      <img src="" alt="" />
+      <img className={styles.section_image} src="" alt="" />
     </section>
   );
 };
