@@ -1,6 +1,5 @@
-import Header from "../container/Header";
-import EventNavBar from "../container/event/EventNavBar";
-import EventDetails from "../container/event/EventDetails";
+import EventNavBar from "../container/event/event_navbar/EventNavBar";
+import EventDetails from "../container/event/event_details/EventDetails";
 
 const EventPage = () => {
   return (

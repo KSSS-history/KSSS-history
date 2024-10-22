@@ -1,6 +1,6 @@
-import SearchBar from "../container/main/SearchBar";
-import YearNavigation from "../container/main/YearNavigation";
-import EventSection from "../container/main/EventSection";
+import SearchBar from "../container/main/search_bar/SearchBar";
+import YearNavigation from "../container/main/year_navigation/YearNavigation";
+import EventSection from "../container/main/event_section/EventSection";
 
 const MainPage = () => {
   return (

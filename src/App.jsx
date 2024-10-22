@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import EventPage from "./pages/EventPage";
 import NoPage from "./pages/NoPage";
-import Header from "./container/Header";
-import Footer from "./container/Footer";
+import Header from "./container/header/Header";
+import Footer from "./container/footer/Footer";
 
 function App() {
   return (
