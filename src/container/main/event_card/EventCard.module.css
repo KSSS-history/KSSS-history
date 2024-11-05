@@ -1,0 +1,17 @@
+.EventCard {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(214, 38, 38);
+}
+.EventCard_header {
+  border: 2px solid rgb(71, 71, 209);
+}
+
+.EventCard_year {
+  background-color: #f1b646;
+}
+
+.EventCard_image {
+  width: 500px;
+  height: 300px;
+}
