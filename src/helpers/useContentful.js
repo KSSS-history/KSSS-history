@@ -18,18 +18,45 @@ const useContentful = () => {
             });
 
 
+
+            // const sanitazedEntries = entries.items.map((item) => {
+            //     const eventImage = item.fields.images && item.fields.images[0]?.fields;
+
+            //     return {
+            //         ...item.fields,
+            //         eventImage
+            //     }
+
+            // })
+
+
             const sanitazedEntries = entries.items.map((item) => {
-                const eventImage = item.fields.images && item.fields.images[0]?.fields;
+                const introImage = item.fields.introImage?.fields || null;
+                const eventImages = item.fields.images?.map(img => img.fields) || null;
+
                 return {
                     ...item.fields,
-                    eventImage
+                    introImage,
+                    eventImages
                 }
+
             })
-            return sanitazedEntries
+
+
+
+            //- - - - - - - - - - - - - - - - - - - - - - - - - - 
+            // Log each item in the array individually
+            sanitazedEntries.forEach((entry, index) => {
+                console.log(`SANITIZED ENTRY ${index + 1}:`, entry);
+            });
+            //- - - - - - - - - - - - - - - - - - - - - - - - - -
+            return sanitazedEntries;
+
 
         } catch (error) {
             console.log(`Error: try to fetching events ${error}`);
         }
+
     };
     return { getData };
 

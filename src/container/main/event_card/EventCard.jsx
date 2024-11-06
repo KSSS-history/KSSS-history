@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./EventCard.module.css";
 
 const EventCard = ({ event }) => {
@@ -10,11 +9,11 @@ const EventCard = ({ event }) => {
       </div>
       <h3>{event.introTextSv}</h3>
       <button>read more</button>
-      {event.eventImage?.file?.url && (
+      {event.introImage?.file?.url && (
         <img
           className={styles.EventCard_image}
-          src={event.eventImage.file.url}
-          alt={event.eventImage.title || "The Event image"}
+          src={event.introImage.file.url}
+          alt={event.introImage.title || "The Event image"}
         />
       )}
     </article>
