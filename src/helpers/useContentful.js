@@ -42,8 +42,6 @@ const useContentful = () => {
 
             })
 
-
-
             //- - - - - - - - - - - - - - - - - - - - - - - - - - 
             // Log each item in the array individually
             sanitazedEntries.forEach((entry, index) => {

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import useContentful from "../../../helpers/useContentful";
 import EventCard from "../event_card/EventCard";
 
-const Events = () => {
+const EventsProvider = () => {
   const [events, setEvents] = useState([]);
 
   //get events from function getData
@@ -43,4 +43,4 @@ const Events = () => {
   );
 };
 
-export default Events;
+export default EventsProvider;

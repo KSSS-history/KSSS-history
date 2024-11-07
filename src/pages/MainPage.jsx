@@ -1,6 +1,6 @@
 import SearchBar from "../container/main/search_bar/SearchBar";
 import YearNavigation from "../container/main/year_navigation/YearNavigation";
-import Events from "../container/main/events/Events";
+import EventsProvider from "../container/main/events_provider/EventsProvider";
 
 const MainPage = () => {
   return (
@@ -13,7 +13,7 @@ const MainPage = () => {
         </p>
         <SearchBar />
         <YearNavigation />
-        <Events />
+        <EventsProvider />
       </main>
     </>
   );
