@@ -1,0 +1,27 @@
+.Language_Toggle {
+  display: flex;
+  border-radius: 25px;
+  width: 4em;
+  height: 2em;
+  background-color: var(--clr-primary);
+}
+
+.Language_Toggle button {
+  margin: auto;
+  border-radius: 50%;
+  border: none;
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.active {
+  font-weight: 900;
+  color: var(--clr-primary);
+  background-color: var(--clr-bg-primary);
+}
+
+.inactive {
+  font-weight: 300;
+  background-color: var(--clr-primary);
+  color: var(--clr-text-secondary);
+}

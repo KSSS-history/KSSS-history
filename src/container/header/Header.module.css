@@ -1,3 +1,16 @@
-header {
-  background-color: blueviolet;
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+  border: 2px solid black;
+}
+
+.ksssLogo {
+  width: 3em;
+  height: 3em;
+}
+.Header_nav {
+  display: flex;
+  align-items: center;
 }
