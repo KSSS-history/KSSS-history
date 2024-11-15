@@ -1,33 +1,36 @@
 import { PiArrowUpRight } from "react-icons/pi";
 import logo from "../../assets/logo.svg";
-import Language_Toggle from "../../components/buttons/Language_Toggle";
-import Menu_Button from "../../components/buttons/Menu_Button";
-import Menu_List from "../../components/menu/Menu_List";
+import LanguageToggle from "../../components/buttons/LanguageToggle";
+import MenuBtn from "../../components/buttons/MenuBtn";
+import MenuList from "../../components/menu/MenuList";
 import useToggle from "../../components/hooks/useToggle";
 import styles from "./Header.module.css";
 
 const Header = () => {
-  const [isMenu, toggleMenu] = useToggle(false);
+  const [isMenuButton, toggleMenuButton] = useToggle(false);
 
   return (
     <header className={styles.Header}>
-      <img className={styles.ksssLogo} src={logo} alt="KSSS Logotype" />
       <nav className={styles.Header_nav}>
+        <img className={styles.ksssLogo} src={logo} alt="KSSS Logotype" />
         <div className={styles.Header_nav_links}>
           <span>History</span>
           <a
             href="https://www.ksss.se/"
             target="_blank"
             rel="noopener noreferrer"
+            className={styles.Header_nav_title}
           >
-            <span>KSSS</span>
-            <PiArrowUpRight size="2em" />
+            <span className={styles.Header_nav_link}>KSSS</span>
+            <PiArrowUpRight size="1em" color="black" />
           </a>
-          <Language_Toggle />
+          <LanguageToggle />
         </div>
-
-        <Menu_Button isMenu={isMenu} toggleMenu={toggleMenu} />
-        {isMenu && <Menu_List />}
+        <MenuBtn
+          isMenuButton={isMenuButton}
+          toggleMenuButton={toggleMenuButton}
+        />
+        {isMenuButton && <MenuList />}
       </nav>
     </header>
   );

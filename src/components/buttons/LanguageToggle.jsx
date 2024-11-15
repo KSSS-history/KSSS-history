@@ -1,11 +1,11 @@
 import useToggle from "../hooks/useToggle";
-import styles from "./Language_Toggle.module.css";
+import styles from "./LanguageToggle.module.css";
 
-const Language_Toggle = () => {
+const LanguageToggle = () => {
   const [isActive, toggleActive] = useToggle(true);
 
   return (
-    <div className={styles.Language_Toggle}>
+    <div className={styles.LanguageToggle}>
       <button
         onClick={toggleActive}
         className={`${isActive ? styles.active : styles.inactive}`}
@@ -23,4 +23,4 @@ const Language_Toggle = () => {
   );
 };
 
-export default Language_Toggle;
+export default LanguageToggle;

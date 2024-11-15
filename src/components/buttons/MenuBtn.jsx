@@ -1,12 +1,12 @@
 //Props are sended from Header.jsx
 
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import styles from "./Menu_Button.module.css";
+import styles from "./MenuBtn.module.css";
 
-const Menu_Button = ({ isMenu, toggleMenu }) => {
+const MenuBtn = ({ isMenuButton, toggleMenuButton }) => {
   return (
-    <button onClick={toggleMenu} className={styles.Menu_Button}>
-      {isMenu ? (
+    <button className={styles.MenuBtn} onClick={toggleMenuButton}>
+      {isMenuButton ? (
         <AiOutlineClose size="2rem" color="black" />
       ) : (
         <AiOutlineMenu size="2rem" color="black" />
@@ -15,4 +15,4 @@ const Menu_Button = ({ isMenu, toggleMenu }) => {
   );
 };
 
-export default Menu_Button;
+export default MenuBtn;
