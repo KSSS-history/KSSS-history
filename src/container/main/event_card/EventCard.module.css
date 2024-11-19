@@ -1,14 +1,25 @@
 .EventCard {
+  position: relative;
   display: flex;
   flex-direction: column;
-  border: 2px solid rgb(214, 38, 38);
+  padding-bottom: 3em;
+  background-color: var(--clr-bg-secondary);
+  box-shadow: 6px 1px 3px 3px var(--clr-shadow);
 }
-.EventCard_header {
-  border: 2px solid rgb(71, 71, 209);
+.EventCard_content {
+  padding-bottom: 1.5em;
+  margin-left: 4em;
 }
 
 .EventCard_year {
-  background-color: #f1b646;
+  position: absolute;
+  background-color: var(--clr-secondary-focused);
+  padding: 0.25em 0.5em;
+  border-radius: 2px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--clr-text-secondary);
+  box-shadow: 0px 1px 5px 3px var(--clr-shadow);
 }
 
 .EventCard_image {

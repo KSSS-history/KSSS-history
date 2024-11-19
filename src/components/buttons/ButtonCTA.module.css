@@ -1,0 +1,14 @@
+.ButtonCTA {
+  background-color: var(--clr-primary);
+  color: var(--clr-text-secondary);
+  font-weight: 600;
+  font-size: 1rem;
+  width: 40%;
+  padding: 0.7em 1em;
+  border-radius: 10px;
+}
+
+.ButtonCTA:hover {
+  background-color: var(--clr-primary-focused);
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}

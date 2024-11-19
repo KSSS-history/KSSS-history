@@ -1,14 +1,15 @@
+import ButtonCTA from "../../../components/buttons/ButtonCTA";
 import styles from "./EventCard.module.css";
 
 const EventCard = ({ event }) => {
   return (
     <article className={styles.EventCard}>
-      <div className={styles.EventCard_header}>
-        <div className={styles.EventCard_year}>{event.fullYear}</div>
+      <div className={styles.EventCard_year}>{event.fullYear}</div>
+      <div className={styles.EventCard_content}>
         <h2>{event.headingSv}</h2>
+        <h3>{event.introTextSv}</h3>
+        <ButtonCTA />
       </div>
-      <h3>{event.introTextSv}</h3>
-      <button>read more</button>
       {event.introImage?.file?.url && (
         <img
           className={styles.EventCard_image}

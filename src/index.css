@@ -2,6 +2,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
+
   padding: 0;
 }
 
@@ -13,12 +14,14 @@ img {
 
 /* Global */
 :root {
-  --clr-primary: #0070b1;
+  --clr-primary: #348db3;
+  --clr-primary-focused: #1181b1;
+  --clr-secondary-focused: #f1b646;
   --clr-bg-primary: #ffff;
   --clr-bg-secondary: #f7f7f7;
   --clr-text-primary: #141414;
   --clr-text-secondary: #ffff;
-  --clr-shadow: #8792a5;
+  --clr-shadow: #c0c6d0;
 }
 
 html {
@@ -42,11 +45,12 @@ h1 {
 h2 {
   font-weight: 700;
   font-size: 1.5rem;
-  margin: 1rem 0 1rem 0;
+  margin-bottom: 1rem;
 }
 
 h3 {
   font-weight: 500;
+  margin-bottom: 1.5rem;
 }
 
 p {
@@ -57,6 +61,7 @@ a,
 button {
   text-decoration: none;
   cursor: pointer;
+  border: none;
 }
 
 ol,
