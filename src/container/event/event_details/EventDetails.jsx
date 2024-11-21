@@ -1,3 +1,4 @@
+//Child Component to EventDetailsProvider.jsx
 import styles from "./EventDetails.module.css";
 
 const EventDetails = ({ event }) => {

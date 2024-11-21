@@ -1,12 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./ButtonCTA.module.css";
 
-function openEventDetails() {}
+const ButtonCTA = ({ eventId }) => {
+  const navigate = useNavigate();
 
-function handleClick() {
-  openEventDetails();
-}
+  function openEventDetails() {
+    navigate(`/event/${eventId}`);
+  }
 
-const ButtonCTA = () => {
+  function handleClick() {
+    openEventDetails();
+  }
+
   return (
     <button className={styles.ButtonCTA} onClick={handleClick}>
       Read more

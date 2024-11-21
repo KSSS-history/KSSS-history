@@ -4,11 +4,10 @@
   flex-direction: column;
   padding: 1em 0 3em 0;
   background-color: var(--clr-bg-primary);
-  box-shadow: 6px 1px 3px 3px var(--clr-shadow);
 }
 .EventCard_content {
   padding-bottom: 1.5em;
-  margin-left: 4em;
+  margin-left: 5em;
 }
 
 .EventCard_year {

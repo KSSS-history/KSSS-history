@@ -1,29 +1,70 @@
+// import { useState, useEffect } from "react";
+// import useContentful from "../../../helpers/useContentful";
+// import EventDetails from "../event_details/EventDetails";
+
+// const EventDetailsProvider = () => {
+//   const [events, setEvents] = useState([]);
+
+//   //get events from function getData
+//   const { getData } = useContentful();
+
+//   useEffect(() => {
+//     getData()
+//       .then((response) => {
+//         console.log("Data retrived:", response);
+//         setEvents(response);
+//       })
+//       .catch((error) => confsole.error("Error retrievering data", error));
+//   }, []);
+
+//   return (
+//     <div>
+//       {events.map((event, id) => (
+//         <EventDetails key={id} event={event} />
+//       ))}
+//     </div>
+//   );
+// };
+
+// export default EventDetailsProvider;
+
 import { useState, useEffect } from "react";
-import useContentful from "../../../helpers/useContentful";
+import { useParams } from "react-router-dom";
+import useContenful from "../../../helpers/useContentful";
 import EventDetails from "../event_details/EventDetails";
 
-const EventDetailsProvider = () => {
-  const [events, setEvents] = useState([]);
+import React from "react";
 
-  //get events from function getData
-  const { getData } = useContentful();
+const EventDetailsProvider = () => {
+  const { id } = useParams();
+  const { getData } = useContenful();
+  const [event, setEvent] = useState();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getData()
-      .then((response) => {
-        console.log("Data retrived:", response);
-        setEvents(response);
-      })
-      .catch((error) => confsole.error("Error retrievering data", error));
+    const getEventDetais = async () => {
+      try {
+        const events = await getData(); // Fetch all events
+        const selectedEvent = events.find((event) => event.id === id);
+        setEvent(selectedEvent);
+      } catch (error) {
+        console.error("Error get the event details:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getEventDetais();
   }, []);
 
-  return (
-    <div>
-      {events.map((event, id) => (
-        <EventDetails key={id} event={event} />
-      ))}
-    </div>
-  );
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!event) {
+    return <div>The Event not found</div>;
+  }
+
+  return <EventDetails event={event} />;
 };
 
 export default EventDetailsProvider;

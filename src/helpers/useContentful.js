@@ -14,7 +14,7 @@ const useContentful = () => {
             const entries = await client.getEntries({
                 content_type: "ksssEvent",
                 select: "fields",
-                // order: "fields.fullYear"
+                order: "fields.fullYear"
             });
 
 
@@ -35,6 +35,7 @@ const useContentful = () => {
                 const eventImages = item.fields.images?.map(img => img.fields) || null;
 
                 return {
+                    id: item.sys.id,
                     ...item.fields,
                     introImage,
                     eventImages
