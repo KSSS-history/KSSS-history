@@ -1,7 +1,19 @@
+import { useState } from "react";
+import { IoMdSearch } from "react-icons/io";
 import styles from "./SearchBar.module.css";
 
 const SearchBar = () => {
-  return <div className={styles.container}>SearchBar</div>;
+  const [query, setQuaery] = useState("");
+  return (
+    <div className={styles.SearchBar}>
+      <lable>
+        <input type="text" placeholder="Search for events..."></input>
+        <button>
+          <IoMdSearch size="2rem" color="var(--clr-primary)" />
+        </button>
+      </lable>
+    </div>
+  );
 };
 
 export default SearchBar;

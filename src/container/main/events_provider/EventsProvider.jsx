@@ -17,11 +17,11 @@ const EventsProvider = () => {
   }, []);
 
   return (
-    <div>
+    <article>
       {events.map((event, id) => (
         <EventCard key={id} event={event} />
       ))}
-    </div>
+    </article>
   );
 };
 

@@ -1,3 +1,24 @@
-.container {
-  background-color: aqua;
+.SearchBar {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  border: solid var(--clr-bg-secondary);
+  border-width: 3px 0px;
+}
+
+.SearchBar lable {
+  display: flex;
+  justify-content: baseline;
+  gap: 0.5rem;
+}
+.SearchBar input {
+  width: 15rem;
+  height: 2rem;
+  padding-left: 1rem;
+  border-radius: 15px;
+  border: none;
+  background-color: var(--clr-bg-secondary);
+}
+.SearchBar button {
+  background-color: var(--clr-bg-primary);
 }

@@ -1,8 +1,7 @@
 .LanguageToggle {
   display: flex;
   border-radius: 25px;
-  width: 3em;
-  height: 1.5em;
+  border: 1px solid var(--clr-primary);
   background-color: var(--clr-primary);
 }
 

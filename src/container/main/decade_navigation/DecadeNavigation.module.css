@@ -1,0 +1,7 @@
+.DecadeNavigation {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  gap: 0.5rem;
+  padding: 1rem;
+}

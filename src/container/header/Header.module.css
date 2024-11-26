@@ -1,5 +1,5 @@
 .Header {
-  padding: 1em 1em;
+  padding: 1rem 1rem;
   box-shadow: 0px 1px 5px 0px var(--clr-shadow);
 }
 
@@ -19,7 +19,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
   align-items: center;
-  gap: 1em;
+  gap: 1rem;
   color: var(--clr-primary);
   font-weight: 700;
 }
@@ -27,4 +27,23 @@
 .Header_nav_link {
   text-decoration: underline;
   color: var(--clr-text-primary);
+}
+
+@media only screen and (min-width: 768px) {
+  .Header {
+    padding: 1rem 5rem;
+  }
+  .Header_nav_links {
+    gap: 3rem;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .Header {
+    padding: 1rem 7.5rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .Header {
+    padding: 1rem 15rem;
+  }
 }

@@ -2,9 +2,10 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 1em 0 3em 0;
-  background-color: var(--clr-bg-primary);
+  padding: 1rem 1rem 1rem 0;
+  background-color: var(--clr-bg-secondary);
 }
+
 .EventCard_content {
   padding-bottom: 1.5em;
   margin-left: 5em;
@@ -24,4 +25,25 @@
 .EventCard_image {
   width: 500px;
   height: 300px;
+}
+
+@media only screen and (min-width: 600px) {
+  .EventCard {
+    flex-direction: row;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .EventCard {
+    padding: 1rem 5rem 2rem 5rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .EventCard {
+    padding: 1rem 15rem 2rem 15rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .EventCard {
+    padding: 1rem 20rem 2rem 20rem;
+  }
 }
