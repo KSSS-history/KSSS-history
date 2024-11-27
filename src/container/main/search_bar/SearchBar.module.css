@@ -6,7 +6,7 @@
   border-width: 3px 0px;
 }
 
-.SearchBar lable {
+.SearchBar label {
   display: flex;
   justify-content: baseline;
   gap: 0.5rem;

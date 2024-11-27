@@ -1,9 +1,9 @@
-//Child Component to EventDetailsProvider.jsx
+//Props come from the parent - EventDetailsProvider.jsx
 import styles from "./EventDetails.module.css";
 
 const EventDetails = ({ event }) => {
   return (
-    <article>
+    <article className={styles.EventDetails}>
       <h2>{event.headingSv}</h2>
       <h3>{event.introTextSv}</h3>
       {event.introImage?.file?.url && (
@@ -22,7 +22,7 @@ const EventDetails = ({ event }) => {
               img?.file?.url && ( // Additional null check for img
                 <img
                   key={index}
-                  className={styles.EventDetails_image}
+                  className={styles.EventDetails_images}
                   src={img.file.url}
                   alt={img.title || "The Event image"}
                 />

@@ -61,6 +61,7 @@ button {
   text-decoration: none;
   cursor: pointer;
   border: none;
+  letter-spacing: 1px;
 }
 
 ol,

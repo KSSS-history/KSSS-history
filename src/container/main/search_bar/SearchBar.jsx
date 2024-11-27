@@ -6,12 +6,12 @@ const SearchBar = () => {
   const [query, setQuaery] = useState("");
   return (
     <div className={styles.SearchBar}>
-      <lable>
+      <label>
         <input type="text" placeholder="Search for events..."></input>
         <button>
           <IoMdSearch size="2rem" color="var(--clr-primary)" />
         </button>
-      </lable>
+      </label>
     </div>
   );
 };
