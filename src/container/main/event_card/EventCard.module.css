@@ -36,6 +36,7 @@
 @media only screen and (min-width: 768px) {
   .EventCard {
     padding: 1rem 5rem 2rem 5rem;
+    /* margin-top: 1rem; */
   }
 }
 @media only screen and (min-width: 1024px) {

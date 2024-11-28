@@ -1,4 +1,24 @@
 .DecadeNavigationBtn {
-  width: 4rem;
-  height: 2rem;
+  width: 5rem;
+  padding: 0.25rem;
+  border-radius: 15px;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--clr-shadow);
+  background-color: var(--clr-bg-primary);
+  border: 1px solid var(--clr-shadow);
+
+  transition: 0.2s;
+}
+
+.DecadeNavigationBtn:hover {
+  border: 1px solid var(--clr-primary);
+  color: var(--clr-primary);
+}
+.DecadeNavigationBtn.Active {
+  background-color: var(--clr-primary-focused);
+  color: var(--clr-text-secondary);
+  border: 1px solid var(--clr-primary);
 }

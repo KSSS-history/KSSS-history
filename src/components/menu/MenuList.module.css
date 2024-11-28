@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-
   position: fixed; /* To appear over other content */
   top: 5em; /* Adjust according to design */
   right: 1em; /* Adjust according to design */

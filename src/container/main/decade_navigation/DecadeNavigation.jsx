@@ -1,21 +1,40 @@
+import { useState } from "react";
 import DecadeNavigationBtn from "../../../components/buttons/DecadeNavigationBtn";
 import styles from "./DecadeNavigation.module.css";
 
-const DecadeNavigation = () => {
+const DecadeNavigation = ({ onSelectDecade }) => {
+  const decades = [
+    "now",
+    "2020",
+    "2000",
+    "1980",
+    "1960",
+    "1940",
+    "1920",
+    "1900",
+    "1880",
+    "1860",
+    "1840",
+    "1830",
+  ];
+
+  const [activeDecade, setActiveDecade] = useState("now");
+
+  function handleDacadeClick(decade) {
+    setActiveDecade(decade);
+    onSelectDecade(decade);
+  }
+
   return (
     <div className={styles.DecadeNavigation}>
-      <DecadeNavigationBtn title="now" />
-      <DecadeNavigationBtn title="2020" />
-      <DecadeNavigationBtn title="2000" />
-      <DecadeNavigationBtn title="1980" />
-      <DecadeNavigationBtn title="1960" />
-      <DecadeNavigationBtn title="1940" />
-      <DecadeNavigationBtn title="1920" />
-      <DecadeNavigationBtn title="1900" />
-      <DecadeNavigationBtn title="1880" />
-      <DecadeNavigationBtn title="1860" />
-      <DecadeNavigationBtn title="1840" />
-      <DecadeNavigationBtn title="1830" />
+      {decades.map((decade) => (
+        <DecadeNavigationBtn
+          key={decade}
+          title={decade}
+          onClick={() => handleDacadeClick(decade)}
+          isActive={activeDecade === decade}
+        />
+      ))}
     </div>
   );
 };
