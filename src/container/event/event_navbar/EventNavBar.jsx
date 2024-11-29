@@ -1,6 +1,6 @@
 //Props come from the parent - EventDetailsProvider.jsx
 
-import GoBackBtn from "../../../components/buttons/GoBackBTN";
+import GoBackBtn from "../../../components/buttons/GoBackBtn";
 import styles from "./EventNavBar.module.css";
 
 const EventNavBar = ({ event }) => {
