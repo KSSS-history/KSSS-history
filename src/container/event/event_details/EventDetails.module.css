@@ -15,8 +15,12 @@
 .EventDetails_image_container {
   padding: 2rem 0;
   display: flex;
+  justify-content: center;
   gap: 1em;
-  overflow: hidden;
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
 }
 .EventDetails_images {
   width: 288px;

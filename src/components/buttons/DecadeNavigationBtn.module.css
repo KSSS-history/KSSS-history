@@ -1,5 +1,5 @@
 .DecadeNavigationBtn {
-  width: 5rem;
+  min-width: 5rem;
   padding: 0.25rem;
   border-radius: 15px;
   font-family: inherit;
@@ -9,7 +9,6 @@
   color: var(--clr-shadow);
   background-color: var(--clr-bg-primary);
   border: 1px solid var(--clr-shadow);
-
   transition: 0.2s;
 }
 
@@ -18,7 +17,7 @@
   color: var(--clr-primary);
 }
 .DecadeNavigationBtn.Active {
-  background-color: var(--clr-primary-focused);
+  background-color: var(--clr-primary);
   color: var(--clr-text-secondary);
   border: 1px solid var(--clr-primary);
 }
