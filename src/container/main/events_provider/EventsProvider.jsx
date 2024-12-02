@@ -6,34 +6,43 @@ import DecadeNavigation from "../decade_navigation/DecadeNavigation";
 const EventsProvider = () => {
   const [events, setEvents] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
-  const [selectedDecade, setSelectedDecade] = useState("");
+  const [selectedDecade, setSelectedDecade] = useState("nu");
 
   //get events from function getData
   const { getData } = useContentful();
+
+  //get current year as the start point for the yers filtering
+  const currentYear = new Date().getFullYear();
 
   useEffect(() => {
     getData()
       .then((response) => {
         setEvents(response);
+
+        //filtering events appearance by default -> current year events
+        const filtered = response.filter(
+          (event) => event.fullYear >= currentYear && event.fullYear
+        );
+        setFilteredEvents(filtered);
       })
       .catch((error) => confsole.error("Error retrievering data", error));
   }, []);
 
   //filtering events by decade:
-  const currentYear = new Date().getFullYear();
   const filterEvents = (events, decade) => {
-    if (decade === "now") {
+    if (decade === "nu") {
       setFilteredEvents(
         events.filter(
-          (event) => event.fullYear >= 2021 && event.fullYear <= currentYear
+          (event) =>
+            event.fullYear >= currentYear && event.fullYear <= currentYear
         )
       );
     } else {
-      const startYear = parseInt(decade, 10);
-      const endYear = startYear - 9;
+      const startYear = parseInt(decade);
+      const endYear = startYear + 9;
       setFilteredEvents(
         events.filter(
-          (event) => event.fullYear >= endYear && event.fullYear <= startYear
+          (event) => event.fullYear >= startYear && event.fullYear <= endYear
         )
       );
     }

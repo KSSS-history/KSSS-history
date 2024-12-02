@@ -10,14 +10,14 @@ const LanguageToggle = () => {
         onClick={toggleActive}
         className={`${isActive ? styles.active : styles.inactive}`}
       >
-        EN
+        SE
       </button>
 
       <button
         onClick={toggleActive}
         className={`${isActive ? styles.inactive : styles.active}`}
       >
-        SE
+        EN
       </button>
     </div>
   );

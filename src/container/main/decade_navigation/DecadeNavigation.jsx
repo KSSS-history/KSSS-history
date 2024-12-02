@@ -4,7 +4,7 @@ import styles from "./DecadeNavigation.module.css";
 
 const DecadeNavigation = ({ onSelectDecade }) => {
   const decades = [
-    "nutid",
+    "nu",
     "2020",
     "2010",
     "2000",
@@ -27,7 +27,7 @@ const DecadeNavigation = ({ onSelectDecade }) => {
     "1830",
   ];
 
-  const [activeDecade, setActiveDecade] = useState("nutid");
+  const [activeDecade, setActiveDecade] = useState("nu");
 
   function handleDacadeClick(decade) {
     setActiveDecade(decade);
