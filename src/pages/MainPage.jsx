@@ -9,8 +9,8 @@ const MainPage = () => {
         <h1>KSSS Historia</h1>
         {/* <h1>KSSS History</h1> */}
         <p>
-          KSSS är Sveriges största och en av världens största yachtklubbar med
-          cirka 6000 medlemmar, varav 2500 juniorer.
+          KSSS är Sveriges största båtklubb och även en av världens största
+          båtklubbar med cirka 6000 medlemmar, varav 2500 juniorer.
         </p>
         {/* <p>
           KSSS is Sweden's largest and one of the world's largest yacht clubs.
