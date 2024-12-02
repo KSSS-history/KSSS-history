@@ -8,9 +8,12 @@ const MenuList = () => {
     <>
       {createPortal(
         <ul className={styles.MenuList}>
-          <li>About us</li>
-          <li>Be a member</li>
-          <li>Contact us</li>
+          <li>Om oss</li>
+          {/* <li>About us</li> */}
+          <li>Bli medlem</li>
+          {/* <li>Be a member</li> */}
+          <li>Kontakta oss</li>
+          {/* <li>Contact us</li> */}
         </ul>,
         document.body
       )}

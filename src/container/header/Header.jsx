@@ -14,7 +14,8 @@ const Header = () => {
       <nav className={styles.Header_nav}>
         <img className={styles.ksssLogo} src={logo} alt="KSSS Logotype" />
         <div className={styles.Header_nav_links}>
-          <span>History</span>
+          <span>Historia</span>
+          {/* <span>History</span> */}
           <a
             href="https://www.ksss.se/"
             target="_blank"

@@ -7,7 +7,7 @@ const SearchBar = () => {
   return (
     <div className={styles.SearchBar}>
       <label>
-        <input type="text" placeholder="Search for events..."></input>
+        <input type="text" placeholder="Sök för händelser..."></input>
         <button>
           <IoMdSearch size="2rem" color="var(--clr-primary)" />
         </button>

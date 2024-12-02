@@ -14,7 +14,7 @@ const ButtonCTA = ({ eventId }) => {
 
   return (
     <button className={styles.ButtonCTA} onClick={handleClick}>
-      Read more
+      Läs mer
     </button>
   );
 };

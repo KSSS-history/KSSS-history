@@ -2,19 +2,20 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 1rem 1rem 1rem 0;
+  padding: 1rem 0 1rem 0;
   background-color: var(--clr-bg-secondary);
 }
 
 .EventCard_content {
-  padding-bottom: 1.5em;
-  margin-left: 5em;
+  margin-left: 5rem;
+  padding: 1rem 1rem 1rem 0;
 }
 
 .EventCard_year {
   position: absolute;
+  margin-top: 1.5rem;
   background-color: var(--clr-secondary-focused);
-  padding: 0.25em 0.5em;
+  padding: 0.25rem 0.5rem;
   border-radius: 2px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -24,8 +25,9 @@
 }
 
 .EventCard_image {
-  width: 500px;
-  height: 300px;
+  width: 23rem;
+  height: 16rem;
+  margin: auto;
 }
 
 @media only screen and (min-width: 600px) {

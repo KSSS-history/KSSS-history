@@ -6,7 +6,7 @@ import DecadeNavigation from "../decade_navigation/DecadeNavigation";
 const EventsProvider = () => {
   const [events, setEvents] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
-  const [selectedDecade, setSelectedDecade] = useState("now");
+  const [selectedDecade, setSelectedDecade] = useState("");
 
   //get events from function getData
   const { getData } = useContentful();
@@ -14,15 +14,15 @@ const EventsProvider = () => {
   useEffect(() => {
     getData()
       .then((response) => {
-        setEvents(response, "now");
+        setEvents(response);
       })
       .catch((error) => confsole.error("Error retrievering data", error));
   }, []);
 
   //filtering events by decade:
+  const currentYear = new Date().getFullYear();
   const filterEvents = (events, decade) => {
     if (decade === "now") {
-      const currentYear = new Date().getFullYear();
       setFilteredEvents(
         events.filter(
           (event) => event.fullYear >= 2021 && event.fullYear <= currentYear
