@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { PiArrowUpRight } from "react-icons/pi";
 import logo from "../../assets/logo.svg";
 import LanguageToggle from "../../components/buttons/LanguageToggle";
@@ -12,7 +13,9 @@ const Header = () => {
   return (
     <header className={styles.Header}>
       <nav className={styles.Header_nav}>
-        <img className={styles.ksssLogo} src={logo} alt="KSSS Logotype" />
+        <Link to="/">
+          <img className={styles.ksssLogo} src={logo} alt="KSSS Logotype" />
+        </Link>
         <div className={styles.Header_nav_links}>
           <span>Historia</span>
           {/* <span>History</span> */}
