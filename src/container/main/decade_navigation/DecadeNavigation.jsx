@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import DecadeNavigationBtn from "../../../components/buttons/DecadeNavigationBtn";
 import styles from "./DecadeNavigation.module.css";
 
@@ -28,10 +29,19 @@ const DecadeNavigation = ({ onSelectDecade }) => {
   ];
 
   const [activeDecade, setActiveDecade] = useState("nu");
+  const navigate = useNavigate();
 
   function handleDacadeClick(decade) {
     setActiveDecade(decade);
-    onSelectDecade(decade);
+    if (decade === "nu") {
+      navigate("/");
+    } else {
+      navigate(`/decade/${decade}`);
+    }
+
+    if (onSelectDecade) {
+      onSelectDecade(decade);
+    }
   }
 
   return (

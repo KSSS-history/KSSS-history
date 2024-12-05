@@ -15,10 +15,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />}>
-          <Route
-            path="/decade/:decadeId"
-            element={<EventsProvider decade={2020} />}
-          />
+          <Route path="/decade/:decade" element={<EventsProvider />} />
         </Route>
         <Route path="event/:id" element={<EventPage />} />
         <Route path="*" element={<NoPage />} />
