@@ -6,13 +6,15 @@
 .EventDetails p {
   margin: 1rem;
 }
+
 .EventDetails_image {
   width: 450px;
   height: 270px;
   margin: auto;
+  padding: 1rem 0;
 }
 
-.EventDetails_image_container {
+.EventDetails_images_container {
   padding: 2rem 0;
   display: flex;
   justify-content: center;
@@ -27,17 +29,18 @@
   height: 173px;
   border-radius: 10px;
 }
+
+.EventDetails_description a {
+  color: var(--clr-primary);
+}
+
 @media only screen and (min-width: 768px) {
-  .EventDetails h2,
-  .EventDetails h3,
-  .EventDetails p {
+  .EventDetails :is(h1, h2, h3, h4, h5, h6, p) {
     margin: 1rem 5rem;
   }
 }
 @media only screen and (min-width: 1025px) {
-  .EventDetails h2,
-  .EventDetails h3,
-  .EventDetails p {
+  .EventDetails :is(h1, h2, h3, h4, h5, h6, p) {
     margin: 1rem 15rem;
   }
 }

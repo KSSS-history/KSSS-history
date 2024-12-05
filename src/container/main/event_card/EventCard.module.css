@@ -33,6 +33,11 @@
 @media only screen and (min-width: 600px) {
   .EventCard {
     flex-direction: row;
+    justify-content: space-between;
+  }
+  .EventCard_image_container {
+    min-width: 33%;
+    height: auto;
   }
 }
 @media only screen and (min-width: 768px) {

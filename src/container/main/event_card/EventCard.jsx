@@ -16,11 +16,13 @@ const EventCard = ({ event }) => {
         {hasDetails && <ButtonCTA eventId={event.id} />}
       </div>
       {event.introImage?.file?.url && (
-        <img
-          className={styles.EventCard_image}
-          src={event.introImage.file.url}
-          alt={event.introImage.title || "The Event image"}
-        />
+        <div className={styles.EventCard_image_container}>
+          <img
+            className={styles.EventCard_image}
+            src={event.introImage.file.url}
+            alt={event.introImage.title || "The Event image"}
+          />
+        </div>
       )}
     </article>
   );
