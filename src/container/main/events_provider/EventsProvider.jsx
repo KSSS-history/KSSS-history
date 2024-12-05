@@ -11,7 +11,7 @@ const EventsProvider = () => {
   //get events from function getData
   const { getData } = useContentful();
 
-  //get current year as the start point for the yers filtering
+  //get current year as the start point for the years filtering
   const currentYear = new Date().getFullYear();
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const EventsProvider = () => {
       .then((response) => {
         setEvents(response);
 
-        //filtering events appearance by default -> current year events
+        //filtering events appearance by default as the current year events
         const filtered = response.filter(
           (event) => event.fullYear >= currentYear && event.fullYear
         );
