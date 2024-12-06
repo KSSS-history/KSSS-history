@@ -14,7 +14,7 @@ const useContentful = () => {
             const entries = await client.getEntries({
                 content_type: "ksssEvent",
                 select: "fields",
-                order: "fields.fullYear" || "fields.date"
+                order: "fields.fullYear" && "fields.date"
             });
 
 
