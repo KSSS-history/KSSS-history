@@ -25,7 +25,7 @@ const EventsProvider = () => {
         );
         setFilteredEvents(filtered);
       })
-      .catch((error) => confsole.error("Error retrievering data", error));
+      .catch((error) => console.error("Error retrievering data", error));
   }, []);
 
   //filtering events by decade:
