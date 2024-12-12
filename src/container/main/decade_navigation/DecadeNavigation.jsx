@@ -2,7 +2,7 @@ import { useState } from "react";
 import DecadeNavigationBtn from "../../../components/buttons/DecadeNavigationBtn";
 import styles from "./DecadeNavigation.module.css";
 
-const DecadeNavigation = ({ onSelectDecade }) => {
+const DecadeNavigation = ({ onSelectDecade, selectedDecade }) => {
   const decades = [
     "nu",
     "2020",

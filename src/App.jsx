@@ -7,19 +7,22 @@ import EventPage from "./pages/EventPage";
 import NoPage from "./pages/NoPage";
 import Header from "./container/header/Header";
 import Footer from "./container/footer/Footer";
+import DataProvider from "./helpers/contexts/DataProvider";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Routes>
-        <Route path="/" element={<MainPage />}>
-          {/* <Route path="/decade/:decadeId" element={<EventsProvider />} /> */}
-        </Route>
-        <Route path="event/:id" element={<EventPage />} />
-        <Route path="*" element={<NoPage />} />
-      </Routes>
-      <Footer />
+      <DataProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<MainPage />}>
+            {/* <Route path="/decade/:decadeId" element={<EventsProvider />} /> */}
+          </Route>
+          <Route path="event/:id" element={<EventPage />} />
+          <Route path="*" element={<NoPage />} />
+        </Routes>
+        <Footer />
+      </DataProvider>
     </div>
   );
 }

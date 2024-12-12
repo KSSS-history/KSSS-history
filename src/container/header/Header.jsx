@@ -4,7 +4,7 @@ import logo from "../../assets/logo.svg";
 import LanguageToggle from "../../components/buttons/LanguageToggle";
 import MenuBtn from "../../components/buttons/MenuBtn";
 import MenuList from "../../components/menu/MenuList";
-import useToggle from "../../components/hooks/useToggle";
+import useToggle from "../../helpers/hooks/useToggle";
 import styles from "./Header.module.css";
 
 const Header = () => {
