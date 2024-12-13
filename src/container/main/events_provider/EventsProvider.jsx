@@ -17,14 +17,14 @@ const EventsProvider = () => {
   };
 
   return (
-    <section>
+    <>
       <DecadeNavigation onSelectDecade={handleDecadeSelection} />
       <article>
         {filteredEvents.map((event) => (
           <EventCard key={event.id} event={event} />
         ))}
       </article>
-    </section>
+    </>
   );
 };
 
