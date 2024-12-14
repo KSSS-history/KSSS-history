@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { EventContext } from "../../../helpers/contexts/DataProvider";
 import DecadeNavigationBtn from "../../../components/buttons/DecadeNavigationBtn";
 import styles from "./DecadeNavigation.module.css";
 
-const DecadeNavigation = ({ onSelectDecade }) => {
+const DecadeNavigation = () => {
   const decades = [
     "nu",
     "2020",
@@ -29,11 +30,12 @@ const DecadeNavigation = ({ onSelectDecade }) => {
   ];
 
   const [activeDecade, setActiveDecade] = useState("nu");
+  const { filterByDecade } = useContext(EventContext);
   const navigate = useNavigate();
 
   function handleDacadeClick(decade) {
+    filterByDecade(decade);
     setActiveDecade(decade);
-    onSelectDecade(decade);
     if (decade === "nu") {
       navigate("/");
     } else {

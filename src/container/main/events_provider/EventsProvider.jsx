@@ -6,19 +6,13 @@ import EventCard from "../event_card/EventCard";
 import DecadeNavigation from "../decade_navigation/DecadeNavigation";
 
 const EventsProvider = () => {
-  const { filteredEvents, filterByDecade, loading, error } =
-    useContext(EventContext);
+  const { filteredEvents, loading, error } = useContext(EventContext);
   if (loading) return <div>Loading....</div>;
   if (error) return <div>Error accured: {error.message}</div>;
 
-  //function to handle decade selection for onClick
-  const handleDecadeSelection = (decade) => {
-    filterByDecade(decade);
-  };
-
   return (
     <>
-      <DecadeNavigation onSelectDecade={handleDecadeSelection} />
+      <DecadeNavigation />
       <article>
         {filteredEvents.map((event) => (
           <EventCard key={event.id} event={event} />

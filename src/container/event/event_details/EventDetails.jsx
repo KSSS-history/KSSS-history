@@ -1,5 +1,4 @@
-// this
-
+// the documentToReactComponents helps to display the reach text from Contentful efficiently.
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 //Props come from the parent - EventDetailsProvider.jsx
@@ -39,8 +38,8 @@ const EventDetails = ({ event }) => {
             )}
         </div>
       )}
-      {/* The reach text from Contentful MUST renders inside <div>, 
-      because data retrieves as separate <p> elements and it is prohibited to nestle <p> inside <p>. */}
+      {/* The reach text from Contentful MUST renders inside a <div>, 
+      because text retrieves as separate <p> elements and it is prohibited to nestle <p> inside <p>. */}
       <div className={styles.EventDetails_description}>
         {documentToReactComponents(event.descriptionSv)}
       </div>
