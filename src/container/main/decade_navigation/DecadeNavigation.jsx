@@ -1,5 +1,5 @@
-import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { EventContext } from "../../../helpers/contexts/DataProvider";
 import DecadeNavigationBtn from "../../../components/buttons/DecadeNavigationBtn";
 import styles from "./DecadeNavigation.module.css";
@@ -29,13 +29,18 @@ const DecadeNavigation = () => {
     "1830",
   ];
 
-  const [activeDecade, setActiveDecade] = useState("nu");
   const { filterByDecade } = useContext(EventContext);
+  const { decade } = useParams();
   const navigate = useNavigate();
 
+  const activeDecade = decade || "nu";
+
+  //Whatever the url pathname change /activeDecade/, show the respective filtered events
+  useEffect(() => {
+    filterByDecade(activeDecade);
+  }, [activeDecade]);
+
   function handleDacadeClick(decade) {
-    filterByDecade(decade);
-    setActiveDecade(decade);
     if (decade === "nu") {
       navigate("/");
     } else {
