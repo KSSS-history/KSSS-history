@@ -3,7 +3,6 @@
 import { useContext } from "react";
 import { EventContext } from "../../../helpers/contexts/DataProvider";
 import EventCard from "../event_card/EventCard";
-import DecadeNavigation from "../decade_navigation/DecadeNavigation";
 
 const EventsProvider = () => {
   const { filteredEvents, loading, error } = useContext(EventContext);
@@ -12,7 +11,6 @@ const EventsProvider = () => {
 
   return (
     <>
-      <DecadeNavigation />
       <article>
         {filteredEvents.map((event) => (
           <EventCard key={event.id} event={event} />

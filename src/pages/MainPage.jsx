@@ -1,5 +1,5 @@
 import SearchBar from "../container/main/search_bar/SearchBar";
-
+import DecadeNavigation from "../container/main/decade_navigation/DecadeNavigation";
 import EventsProvider from "../container/main/events_provider/EventsProvider";
 import styles from "./MainPage.module.css";
 const MainPage = () => {
@@ -17,7 +17,7 @@ const MainPage = () => {
           With about 6000 members, including 2500 juniors.
         </p> */}
         <SearchBar />
-
+        <DecadeNavigation />
         <EventsProvider />
       </main>
     </>
