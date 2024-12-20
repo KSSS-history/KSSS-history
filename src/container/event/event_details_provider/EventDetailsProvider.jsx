@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
-import { EventContext } from "../../../helpers/contexts/DataProvider";
+import { EventContext } from "../../../utiles/contexts/DataProvider";
 import EventNavBar from "../event_navbar/EventNavBar";
 import EventDetails from "../event_details/EventDetails";
 

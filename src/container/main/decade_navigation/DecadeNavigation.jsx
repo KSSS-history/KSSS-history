@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { EventContext } from "../../../helpers/contexts/DataProvider";
+import { EventContext } from "../../../utiles/contexts/DataProvider";
 import DecadeNavigationBtn from "../../../components/buttons/DecadeNavigationBtn";
 import styles from "./DecadeNavigation.module.css";
 

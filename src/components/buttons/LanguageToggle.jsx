@@ -1,4 +1,4 @@
-import useToggle from "../../helpers/hooks/useToggle";
+import useToggle from "../../utiles/hooks/useToggle";
 import styles from "./LanguageToggle.module.css";
 
 const LanguageToggle = () => {

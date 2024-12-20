@@ -1,7 +1,7 @@
 //
 
 import { useContext } from "react";
-import { EventContext } from "../../../helpers/contexts/DataProvider";
+import { EventContext } from "../../../utiles/contexts/DataProvider";
 import EventCard from "../event_card/EventCard";
 
 const EventsProvider = () => {

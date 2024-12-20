@@ -22,6 +22,7 @@ const useContentful = () => {
 
                 return {
                     id: item.sys.id,
+                    slug: item.sys.slug,
                     ...item.fields,
                     introImage,
                     eventImages

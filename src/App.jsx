@@ -7,7 +7,7 @@ import EventPage from "./pages/EventPage";
 import NoPage from "./pages/NoPage";
 import Header from "./container/header/Header";
 import Footer from "./container/footer/Footer";
-import DataProvider from "./helpers/contexts/DataProvider";
+import DataProvider from "./utiles/contexts/DataProvider";
 
 function App() {
   return (
