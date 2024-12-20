@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import useContentful from "../useContentful";
+import useContentful from "../datalayer/useContentful";
 
 //Create the context for the context object
 export const EventContext = createContext();

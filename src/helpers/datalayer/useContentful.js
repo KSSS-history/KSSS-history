@@ -1,36 +1,22 @@
-import { createClient } from 'contentful';
+import client from "./client"
 
 const useContentful = () => {
 
-    const client = createClient({
-        space: import.meta.env.VITE_CONTENTFUL_SPACE_ID,
-        accessToken: import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN,
-    })
-
-
-    //function to fetch all events from "KSSS Event" content type
+    //function to fetch all events from "KSSS Event" content type:
     const getData = async () => {
         try {
             const entries = await client.getEntries({
                 content_type: "ksssEvent",
                 select: "fields",
-                order: "fields.fullYear" && "fields.date"
+                order: "fields.fullYear" && "fields.date",
+                query: "" //here will go filtering
             });
 
 
-
-            // const sanitazedEntries = entries.items.map((item) => {
-            //     const eventImage = item.fields.images && item.fields.images[0]?.fields;
-
-            //     return {
-            //         ...item.fields,
-            //         eventImage
-            //     }
-
-            // })
-
-
-            const sanitazedEntries = entries.items.map((item) => {
+            //- - - - - - - - - - - - - - - - - - - - - - - - - - 
+            //Sanitizing data from Contentful to get only fields that needed:
+            //- - - - - - - - - - - - - - - - - - - - - - - - - - 
+            const sanitizedEntries = entries.items.map((item) => {
                 const introImage = item.fields.introImage?.fields || null;
                 const eventImages = item.fields.images?.map(img => img.fields) || null;
 
@@ -45,11 +31,11 @@ const useContentful = () => {
 
             //- - - - - - - - - - - - - - - - - - - - - - - - - - 
             // Log each item in the array individually
-            sanitazedEntries.forEach((entry, index) => {
+            sanitizedEntries.forEach((entry, index) => {
                 console.log(`SANITIZED ENTRY ${index + 1}:`, entry);
             });
             //- - - - - - - - - - - - - - - - - - - - - - - - - -
-            return sanitazedEntries;
+            return sanitizedEntries;
 
 
         } catch (error) {
