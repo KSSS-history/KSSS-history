@@ -3,6 +3,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import DecadeNavigation from "./container/main/decade_navigation/DecadeNavigation";
+import SearchResults from "./container/main/search_results/SearchResults";
 import EventPage from "./pages/EventPage";
 import NoPage from "./pages/NoPage";
 import Header from "./container/header/Header";
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<MainPage />}>
             <Route path="/decade/:decade" element={<DecadeNavigation />} />
           </Route>
+          <Route path="/search" element={<SearchResults />} />
           <Route path="event/:id" element={<EventPage />} />
           <Route path="*" element={<NoPage />} />
         </Routes>

@@ -20,15 +20,16 @@ const useContentful = () => {
                 const introImage = item.fields.introImage?.fields || null;
                 const eventImages = item.fields.images?.map(img => img.fields) || null;
 
+
                 return {
                     id: item.sys.id,
-                    slug: item.sys.slug,
                     ...item.fields,
                     introImage,
                     eventImages
                 }
 
             })
+
 
             //- - - - - - - - - - - - - - - - - - - - - - - - - - 
             // Log each item in the array individually
@@ -37,7 +38,6 @@ const useContentful = () => {
             });
             //- - - - - - - - - - - - - - - - - - - - - - - - - -
             return sanitizedEntries;
-
 
         } catch (error) {
             console.log(`Error: try to fetching events ${error}`);

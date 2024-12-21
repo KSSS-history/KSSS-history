@@ -1,16 +1,16 @@
-.MainPage h1,
-.MainPage p {
+.Hero h1,
+.Hero p {
   padding: 0 1rem;
 }
 @media only screen and (min-width: 768px) {
-  .MainPage h1,
-  .MainPage p {
+  .Hero h1,
+  .Hero p {
     padding: 1rem 5rem;
   }
 }
 @media only screen and (min-width: 1025px) {
-  .MainPage h1,
-  .MainPage p {
+  .Hero h1,
+  .Hero p {
     padding: 0.5rem 15rem;
   }
 }
