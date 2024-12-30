@@ -2,7 +2,8 @@ import ButtonCTA from "../../../components/buttons/ButtonCTA";
 import styles from "./EventCard.module.css";
 
 const EventCard = ({ event }) => {
-  //Conditional appearence of the ButtonCTA. If there are some more info to read, button is appeared.
+  //Conditional appearence of the ButtonCTA.
+  //If there are some more info to read, button will appeare.
   const hasDetails =
     event.descriptionEn || event.descriptionSv || event.eventImages;
 

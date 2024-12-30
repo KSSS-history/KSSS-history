@@ -10,7 +10,8 @@ const EventDetailsProvider = () => {
   const event = getEventById(id);
 
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error accured: {error.message}</div>;
+  if (error)
+    return <div>Error accured in Event Details Provider: {error.message}</div>;
   if (!event) return <div>The Event not found.</div>;
 
   return (

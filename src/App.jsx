@@ -19,7 +19,7 @@ function App() {
           <Route path="/" element={<MainPage />}>
             <Route path="/decade/:decade" element={<DecadeNavigation />} />
           </Route>
-          <Route path="/search" element={<SearchResults />} />
+          <Route path="/search/:query" element={<SearchResults />} />
           <Route path="event/:id" element={<EventPage />} />
           <Route path="*" element={<NoPage />} />
         </Routes>

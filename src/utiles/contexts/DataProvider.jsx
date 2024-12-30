@@ -23,13 +23,11 @@ const DataProvider = ({ children }) => {
         const allEvents = await getData();
         setEvents(allEvents);
 
-        //Filter for current year as default
+        //Filter for current year as default on the first
         const currentYearEvents = allEvents.filter(
-          (event) => event.fullYear >= currentYear && event.fullYear
+          (event) => Number(event.fullYear) === currentYear
         );
-
         setFilteredEvents(currentYearEvents);
-        console.log(currentYearEvents);
       } catch (err) {
         console.error("Error fetching events:", err);
         setError(err);
@@ -52,7 +50,7 @@ const DataProvider = ({ children }) => {
         )
       );
     } else {
-      const startYear = parseInt(decade, 10);
+      const startYear = parseInt(decade);
       const endYear = startYear + 9;
       setFilteredEvents(
         events.filter(

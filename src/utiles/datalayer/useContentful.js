@@ -2,6 +2,8 @@ import client from "./client"
 
 const useContentful = () => {
 
+
+
     //function to fetch all events from "KSSS Event" content type:
     const getData = async () => {
         try {
@@ -9,7 +11,8 @@ const useContentful = () => {
                 content_type: "ksssEvent",
                 select: "fields",
                 order: "fields.fullYear" && "fields.date",
-                query: "" //here will go filtering
+                query: "" //here can go filtering
+
             });
 
 
@@ -40,7 +43,7 @@ const useContentful = () => {
             return sanitizedEntries;
 
         } catch (error) {
-            console.log(`Error: try to fetching events ${error}`);
+            console.log(`Error: trying to fetch events ${error}`);
         }
 
     };
