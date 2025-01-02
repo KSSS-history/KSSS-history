@@ -23,16 +23,24 @@ const SearchResults = () => {
     <>
       <Hero />
       <SearchBar />
-      <div>The search result for: {query} </div>
-      <div>There are tottaly {events.length} events in the DB</div>
-      <div>Found {findEvents.length} mathing.</div>
+      <div>
+        Sökresultat för:
+        <h2>{query}</h2>
+      </div>
+      {findEvents.length === 0 ? (
+        " "
+      ) : (
+        <div>
+          Vi hittade <strong>{findEvents.length}</strong> överensstämmelse.
+        </div>
+      )}
 
       <article>
         {/*Here go the results of the query */}
         {findEvents.length > 0 ? (
           findEvents.map((event) => <EventCard key={event.id} event={event} />)
         ) : (
-          <div>No events found matching your query.</div>
+          <div>Vi hittade inga resultat. Försök igen med ett annat ord.</div>
         )}
       </article>
     </>
