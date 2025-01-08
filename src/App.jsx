@@ -9,21 +9,24 @@ import NoPage from "./pages/NoPage";
 import Header from "./container/header/Header";
 import Footer from "./container/footer/Footer";
 import DataProvider from "./utiles/contexts/DataProvider";
+import LanguageProvider from "./utiles/contexts/LanguageProvider";
 
 function App() {
   return (
     <div className="App">
       <DataProvider>
-        <Header />
-        <Routes>
-          <Route path="/" element={<MainPage />}>
-            <Route path="/decade/:decade" element={<DecadeNavigation />} />
-          </Route>
-          <Route path="/search/:query" element={<SearchResults />} />
-          <Route path="event/:id" element={<EventPage />} />
-          <Route path="*" element={<NoPage />} />
-        </Routes>
-        <Footer />
+        <LanguageProvider>
+          <Header />
+          <Routes>
+            <Route path="/" element={<MainPage />}>
+              <Route path="/decade/:decade" element={<DecadeNavigation />} />
+            </Route>
+            <Route path="/search/:query" element={<SearchResults />} />
+            <Route path="event/:id" element={<EventPage />} />
+            <Route path="*" element={<NoPage />} />
+          </Routes>
+          <Footer />
+        </LanguageProvider>
       </DataProvider>
     </div>
   );

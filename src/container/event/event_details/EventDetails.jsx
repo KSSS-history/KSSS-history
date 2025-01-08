@@ -1,18 +1,42 @@
+import { useContext } from "react";
+import { LanguageContext } from "../../../utiles/contexts/LanguageProvider";
+import styles from "./EventDetails.module.css";
+
 // the documentToReactComponents helps to display the reach text from Contentful efficiently.
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
+//- - - - - - - - - - - - - - - - - - - - - - - - - - -
 //Props come from the parent - EventDetailsProvider.jsx
-import styles from "./EventDetails.module.css";
+//- - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 const EventDetails = ({ event }) => {
+  // Languge selection ability:
+  const { language } = useContext(LanguageContext);
+
+  const languageOption = {
+    swedish: {
+      heading: event.headingSv,
+      introText: event.introTextSv,
+      description: event.descriptionSv,
+    },
+    english: {
+      heading: event.headingEn,
+      introText: event.introTextEn,
+      description: event.descriptionEn,
+    },
+  };
+
+  //Select the appropriate language content
+  const { heading, introText, description } = languageOption[language];
+
   const hasImages =
     Array.isArray(event.eventImages) &&
     event.eventImages.some((img) => img?.file?.url);
 
   return (
     <article className={styles.EventDetails}>
-      <h2>{event.headingSv}</h2>
-      <h3>{event.introTextSv}</h3>
+      <h2>{heading}</h2>
+      <h3>{introText}</h3>
       {event.introImage?.file?.url && (
         <img
           className={styles.EventDetails_image}
@@ -41,7 +65,7 @@ const EventDetails = ({ event }) => {
       {/* The reach text from Contentful MUST renders inside a <div>, 
       because text retrieves as separate <p> elements and it is prohibited to nestle <p> inside <p>. */}
       <div className={styles.EventDetails_description}>
-        {documentToReactComponents(event.descriptionSv)}
+        {documentToReactComponents(description)}
       </div>
     </article>
   );

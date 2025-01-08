@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { LanguageContext } from "../../utiles/contexts/LanguageProvider";
 import { Link } from "react-router-dom";
 import { PiArrowUpRight } from "react-icons/pi";
 import logo from "../../assets/logo.svg";
@@ -8,6 +10,21 @@ import useToggle from "../../utiles/hooks/useToggle";
 import styles from "./Header.module.css";
 
 const Header = () => {
+  // Languge selection ability:
+  const { language } = useContext(LanguageContext);
+
+  const languageOption = {
+    swedish: {
+      heading: "Historia",
+    },
+    english: {
+      heading: "History",
+    },
+  };
+
+  //Select the appropriate language content
+  const { heading } = languageOption[language];
+
   const [isMenuButton, toggleMenuButton] = useToggle(false);
 
   return (
@@ -17,8 +34,7 @@ const Header = () => {
           <img className={styles.ksssLogo} src={logo} alt="KSSS Logotype" />
         </Link>
         <div className={styles.Header_nav_links}>
-          <span>Historia</span>
-          {/* <span>History</span> */}
+          <span>{heading}</span>
           <a
             href="https://www.ksss.se/"
             target="_blank"

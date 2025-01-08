@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { LanguageContext } from "../../../utiles/contexts/LanguageProvider";
 import { IoMdSearch } from "react-icons/io";
 import styles from "./SearchBar.module.css";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
+  const { language } = useContext(LanguageContext);
   const navigate = useNavigate();
 
   function handleChange(e) {
@@ -21,12 +22,24 @@ const SearchBar = () => {
     navigate(`/search/${query}`);
   }
 
+  // Languge selection ability:
+  const languageOption = {
+    swedish: {
+      placeholder: "Sök för händelser...",
+    },
+    english: {
+      placeholder: "Search for events...",
+    },
+  };
+
+  //Select the appropriate language content
+  const { placeholder } = languageOption[language];
   return (
     <search className={styles.SearchBar}>
       <form>
         <input
           type="search"
-          placeholder="Sök för händelser..."
+          placeholder={placeholder}
           value={query}
           onChange={handleChange}
         ></input>

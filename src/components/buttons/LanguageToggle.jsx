@@ -1,21 +1,24 @@
-import useToggle from "../../utiles/hooks/useToggle";
+import { useContext } from "react";
+import { LanguageContext } from "../../utiles/contexts/LanguageProvider";
 import styles from "./LanguageToggle.module.css";
 
 const LanguageToggle = () => {
-  const [isActive, toggleActive] = useToggle(true);
+  const { language, changeLanguage } = useContext(LanguageContext);
 
   return (
     <div className={styles.LanguageToggle}>
       <button
-        onClick={toggleActive}
-        className={`${isActive ? styles.active : styles.inactive}`}
+        value="swedish"
+        onClick={changeLanguage}
+        className={language === "swedish" ? styles.active : styles.inactive}
       >
         SE
       </button>
 
       <button
-        onClick={toggleActive}
-        className={`${isActive ? styles.inactive : styles.active}`}
+        value="english"
+        onClick={changeLanguage}
+        className={language === "english" ? styles.active : styles.inactive}
       >
         EN
       </button>

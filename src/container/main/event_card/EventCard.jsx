@@ -1,5 +1,11 @@
+import { useContext } from "react";
+import { LanguageContext } from "../../../utiles/contexts/LanguageProvider";
 import ButtonCTA from "../../../components/buttons/ButtonCTA";
 import styles from "./EventCard.module.css";
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - -
+//Props come from the parent - EventsProvider.jsx
+//- - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 const EventCard = ({ event }) => {
   //Conditional appearence of the ButtonCTA.
@@ -7,12 +13,29 @@ const EventCard = ({ event }) => {
   const hasDetails =
     event.descriptionEn || event.descriptionSv || event.eventImages;
 
+  // Languge selection ability:
+  const { language } = useContext(LanguageContext);
+
+  const languageOption = {
+    swedish: {
+      heading: event.headingSv,
+      introText: event.introTextSv,
+    },
+    english: {
+      heading: event.headingEn,
+      introText: event.introTextEn,
+    },
+  };
+
+  //Select the appropriate language content
+  const { heading, introText } = languageOption[language];
+
   return (
     <article className={styles.EventCard}>
       <div className={styles.EventCard_year}>{event.fullYear}</div>
       <div className={styles.EventCard_content}>
-        <h2>{event.headingSv}</h2>
-        <h3>{event.introTextSv}</h3>
+        <h2>{heading}</h2>
+        <h3>{introText}</h3>
 
         {hasDetails && <ButtonCTA eventId={event.id} />}
       </div>
