@@ -1,11 +1,11 @@
 import { useContext } from "react";
+import { LanguageContext } from "../../utiles/contexts/LanguageProvider";
 import {
   PiFacebookLogo,
   PiInstagramLogo,
   PiEnvelope,
   PiPhone,
 } from "react-icons/pi";
-import { LanguageContext } from "../../utiles/contexts/LanguageProvider";
 import styles from "./Footer.module.css";
 
 const Footer = () => {
