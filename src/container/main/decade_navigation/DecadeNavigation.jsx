@@ -1,12 +1,27 @@
 import { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { EventContext } from "../../../utiles/contexts/DataProvider";
+import { LanguageContext } from "../../../utiles/contexts/LanguageProvider";
 import DecadeNavigationBtn from "../../../components/buttons/DecadeNavigationBtn";
 import styles from "./DecadeNavigation.module.css";
 
 const DecadeNavigation = () => {
+  const { language } = useContext(LanguageContext);
+
+  // Languge selection ability:
+  const languageOption = {
+    swedish: {
+      now: "nu",
+    },
+    english: {
+      now: "now",
+    },
+  };
+  //Select the appropriate language content
+  const { now } = languageOption[language];
+
   const decades = [
-    "nu",
+    now,
     "2020",
     "2010",
     "2000",
@@ -33,7 +48,7 @@ const DecadeNavigation = () => {
   const { decade } = useParams();
   const navigate = useNavigate();
 
-  const activeDecade = decade || "nu";
+  const activeDecade = decade || now;
 
   //Whatever the url pathname change /activeDecade/, show the respective filtered events
   useEffect(() => {
@@ -41,7 +56,7 @@ const DecadeNavigation = () => {
   }, [activeDecade]);
 
   function handleDacadeClick(decade) {
-    if (decade === "nu") {
+    if (decade === now) {
       navigate("/");
     } else {
       navigate(`decade/${decade}`);

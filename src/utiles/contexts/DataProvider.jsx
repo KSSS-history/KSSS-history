@@ -42,7 +42,7 @@ const DataProvider = ({ children }) => {
   //Filter events by decade
   //- - - - - - - - - - - - - - - - - - - - - - - - - -
   const filterByDecade = (decade) => {
-    if (decade === "nu") {
+    if (decade === "now" || decade === "nu") {
       setFilteredEvents(
         events.filter(
           (event) =>
