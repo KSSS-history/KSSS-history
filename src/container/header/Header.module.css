@@ -1,6 +1,10 @@
 .Header {
   padding: 1rem;
+  background-color: var(--clr-bg-primary);
   box-shadow: 0px 1px 5px 0px var(--clr-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .Header_nav {
