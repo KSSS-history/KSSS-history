@@ -9,7 +9,7 @@ const useContentful = () => {
         //Because there is a limit of 100 entries for every API call from Contentful, 
         //we need to fetch the next 100 and so on until all entries are fetched.
         try {
-            const limit = 100;
+            const limit = 50;
             let skip = 0;
             let total = 0;
             let allEntries = [];
