@@ -12,15 +12,11 @@ const MenuList = () => {
   const languageOption = {
     swedish: {
       home: "Hem",
-      about: "Om oss",
-      membership: "Bli medlem",
-      contact: "Kontakta oss",
+      about: "Om KSSS",
     },
     english: {
       home: "Home",
-      about: "About us",
-      membership: "Become a member",
-      contact: "Contact us",
+      about: "About KSSS",
     },
   };
 
@@ -33,14 +29,9 @@ const MenuList = () => {
           <Link to="/">
             <li>{home}</li>
           </Link>
-          <Link to="/about">
+
+          <Link to="/aboutksss">
             <li>{about}</li>
-          </Link>
-          <Link to="/membership">
-            <li>{membership}</li>
-          </Link>
-          <Link to="/contact">
-            <li>{contact}</li>
           </Link>
         </ul>,
         document.body

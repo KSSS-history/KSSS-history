@@ -1,4 +1,4 @@
-//This component take props to represent the main/intro image
+//This component take props to represent the main/intro image.
 
 import styles from "./IntroImage.module.css";
 
