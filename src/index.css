@@ -18,7 +18,7 @@ img {
   --clr-secondary-focused: #f1b646;
   --clr-bg-primary: #ffff;
   --clr-bg-secondary: #faf9f8;
-  --clr-text-primary: #141414;
+  --clr-text-primary: #202020;
   --clr-text-secondary: #ffff;
   --clr-shadow: #c0c6d0;
 }
@@ -68,4 +68,8 @@ ol,
 ul,
 li {
   list-style-type: none;
+}
+
+li:hover {
+  color: var(--clr-primary-focused);
 }

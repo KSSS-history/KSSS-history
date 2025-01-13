@@ -18,3 +18,7 @@
   gap: 1.75em;
   margin: 1em 0;
 }
+
+.Footer small {
+  margin: 0.25rem 0;
+}

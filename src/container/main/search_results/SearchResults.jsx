@@ -14,8 +14,8 @@ const SearchResults = () => {
 
   // Languge selection ability:
   const languageOptionFields = {
-    swedish: ["headingSv", "introTextSv", "descriptionSv"],
-    english: ["headingEn", "introTextEn", "descriptionEn"],
+    swedish: ["fullYear", "headingSv", "introTextSv", "descriptionSv"],
+    english: ["fullYear", "headingEn", "introTextEn", "descriptionEn"],
   };
 
   const languageOption = {

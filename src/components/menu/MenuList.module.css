@@ -4,15 +4,15 @@
   justify-content: space-around;
   position: fixed; /* To appear over other content */
   top: 5em; /* Adjust according to design */
-  right: 1em; /* Adjust according to design */
-  width: 50%;
-  height: 30%;
+  right: 0.5em; /* Adjust according to design */
+  width: 60vw;
+  height: 30vh;
   background-color: var(--clr-bg-primary);
   padding: 2em;
   border-radius: 15px;
   border: 2px solid var(--clr-bg-secondary);
   filter: drop-shadow(0 0 0.5rem var(--clr-shadow));
-  z-index: 1000; /* Ensure it's above other elements */
+  z-index: 100;
 }
 
 .MenuList::after {
@@ -22,13 +22,33 @@
   border-top: 2px solid var(--clr-bg-secondary);
   border-left: 2px solid var(--clr-bg-secondary);
   bottom: 100%;
-  left: 80%;
+  left: 85%;
   margin-bottom: -1em;
   margin-left: -1em;
   content: "";
   transform: rotate(45deg);
   background-color: var(--clr-bg-primary);
 }
-.MenuList li {
+
+.MenuList a {
   font-weight: 700;
+  color: inherit;
+}
+
+@media only screen and (min-width: 768px) {
+  .MenuList {
+    width: 20rem;
+    right: 5rem;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .MenuList {
+    right: 5.5rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .MenuList {
+    right: 13rem;
+  }
 }

@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { LanguageContext } from "../../../utiles/contexts/LanguageProvider";
+import IntroImage from "../../../components/ui/IntroImage";
 import styles from "./EventDetails.module.css";
 
 // the documentToReactComponents helps to display the reach text from Contentful efficiently.
@@ -37,13 +38,15 @@ const EventDetails = ({ event }) => {
     <article className={styles.EventDetails}>
       <h2>{heading}</h2>
       <h3>{introText}</h3>
+
       {event.introImage?.file?.url && (
-        <img
-          className={styles.EventDetails_image}
+        <IntroImage
+          // className={styles.EventDetails_image}
           src={event.introImage.file.url}
           alt={event.introImage.title || "The Event image"}
         />
       )}
+
       {hasImages && (
         <div className={styles.EventDetails_images_container}>
           {/* Render each image in eventImages if eventImages is an array and has elements */}

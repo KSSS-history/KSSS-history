@@ -74,6 +74,16 @@ const Footer = () => {
         </ul>
       </nav>
       <small>copyright@2024</small>
+      <small>
+        Developed by{" "}
+        <a
+          href="https://www.linkedin.com/in/marianna-reznychenko-255666154/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Marianna.R
+        </a>
+      </small>
     </footer>
   );
 };
