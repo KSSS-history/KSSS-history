@@ -50,7 +50,7 @@ const Header = () => {
           isMenuButton={isMenuButton}
           toggleMenuButton={toggleMenuButton}
         />
-        {isMenuButton && <MenuList />}
+        {isMenuButton && <MenuList toggleMenuButton={toggleMenuButton} />}
       </nav>
     </header>
   );

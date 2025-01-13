@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { LanguageContext } from "../utiles/contexts/LanguageProvider";
-import image from "../assets/images/become_a_member.webp";
+import image from "../../public/images/ksss_flag.webp";
 import IntroImage from "../components/ui/IntroImage";
-import styles from "./MemberPage.module.css";
+import styles from "./AboutPage.module.css";
 
-const MemberPage = () => {
+const AboutPage = () => {
   const { language } = useContext(LanguageContext);
   // Languge selection ability:
   const languageOption = {
@@ -28,7 +28,7 @@ const MemberPage = () => {
   const { title, description, linkText, link } = languageOption[language];
 
   return (
-    <article className={styles.MemberPage}>
+    <article className={styles.AboutPage}>
       <IntroImage src={image} alt="the image of the KSSS flag" />
 
       <h2>{title}</h2>
@@ -39,7 +39,7 @@ const MemberPage = () => {
       <h3>
         {linkText}
         <a
-          className={styles.MemberPage_link}
+          className={styles.AboutPage_link}
           href="https://www.ksss.se/medlem/"
           target="_blank"
           rel="noopener noreferrer"
@@ -51,4 +51,4 @@ const MemberPage = () => {
   );
 };
 
-export default MemberPage;
+export default AboutPage;

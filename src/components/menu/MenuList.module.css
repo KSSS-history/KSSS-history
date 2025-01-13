@@ -1,28 +1,27 @@
 .MenuList {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  position: fixed; /* To appear over other content */
-  top: 5em; /* Adjust according to design */
-  right: 0.5em; /* Adjust according to design */
-  width: 60vw;
-  height: 30vh;
+  justify-content: space-between;
+  gap: 1.5em;
+  padding: 2em 3em 2em 2em;
+  position: fixed;
+  top: 5em;
+  right: 0.5em;
   background-color: var(--clr-bg-primary);
-  padding: 2em;
   border-radius: 15px;
   border: 2px solid var(--clr-bg-secondary);
-  filter: drop-shadow(0 0 0.5rem var(--clr-shadow));
+  filter: drop-shadow(0 0 0.5em var(--clr-shadow));
   z-index: 100;
 }
 
 .MenuList::after {
   position: absolute;
-  width: 2em;
-  height: 2em;
+  width: 1.5em;
+  height: 1.5em;
   border-top: 2px solid var(--clr-bg-secondary);
   border-left: 2px solid var(--clr-bg-secondary);
   bottom: 100%;
-  left: 85%;
+  left: 90%;
   margin-bottom: -1em;
   margin-left: -1em;
   content: "";
@@ -37,18 +36,17 @@
 
 @media only screen and (min-width: 768px) {
   .MenuList {
-    width: 20rem;
     right: 5rem;
   }
 }
 
 @media only screen and (min-width: 1025px) {
   .MenuList {
-    right: 5.5rem;
+    right: 7.5rem;
   }
 }
 @media only screen and (min-width: 1200px) {
   .MenuList {
-    right: 13rem;
+    right: 15rem;
   }
 }
