@@ -4,7 +4,8 @@ import { createContext, useState, useEffect } from "react";
 export const LanguageContext = createContext();
 
 //Initialise the language choice with a follow saving to the Local Storage
-const initialLanguage = JSON.parse(window.localStorage.getItem("language"));
+const initialLanguage =
+  JSON.parse(window.localStorage.getItem("language")) || "swedish";
 
 const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState(initialLanguage);
