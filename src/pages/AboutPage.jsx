@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { LanguageContext } from "../utiles/contexts/LanguageProvider";
-import image from "../../public/images/ksss_flag.webp";
+import image from "/images/ksss_flag.webp?url";
 import IntroImage from "../components/ui/IntroImage";
 import styles from "./AboutPage.module.css";
 
