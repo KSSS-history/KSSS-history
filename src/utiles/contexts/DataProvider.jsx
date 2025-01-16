@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import useContentful from "../datalayer/useContentful";
 
 //Create the context for the context object
@@ -10,6 +11,8 @@ const DataProvider = ({ children }) => {
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const location = useLocation();
+  console.log(location);
 
   //Get current year as the start point for the sorting logic
   const currentYear = new Date().getFullYear();
@@ -23,11 +26,33 @@ const DataProvider = ({ children }) => {
         const allEvents = await getData();
         setEvents(allEvents);
 
-        //Filter for current year as default on the first
-        const currentYearEvents = allEvents.filter(
-          (event) => Number(event.fullYear) === currentYear
-        );
-        setFilteredEvents(currentYearEvents);
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        // useLocation hook -> to keep the decade and it events & the path on the reloading
+        // //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        const decade = location.pathname.includes("decade")
+          ? location.pathname.split("/").pop()
+          : null;
+
+        if (decade && !isNaN(parseInt(decade))) {
+          const startYear = parseInt(decade);
+          const endYear = startYear + 9;
+          setFilteredEvents(
+            allEvents.filter(
+              (event) =>
+                event.fullYear >= startYear && event.fullYear <= endYear
+            )
+          );
+        } else {
+          //- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+          //- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+          //Filter for current year as default on the firs loading
+          //- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+          const currentYearEvents = allEvents.filter(
+            (event) => Number(event.fullYear) === currentYear
+          );
+          setFilteredEvents(currentYearEvents);
+        }
       } catch (err) {
         console.error("Error fetching events:", err);
         setError(err);
@@ -41,7 +66,7 @@ const DataProvider = ({ children }) => {
   //- - - - - - - - - - - - - - - - - - - - - - - - - -
   //Filter events by decade
   //- - - - - - - - - - - - - - - - - - - - - - - - - -
-  const filterByDecade = (decade) => {
+  function filterByDecade(decade) {
     if (decade === "now" || decade === "nu") {
       setFilteredEvents(
         events.filter(
@@ -58,14 +83,14 @@ const DataProvider = ({ children }) => {
         )
       );
     }
-  };
+  }
 
   //- - - - - - - - - - - - - - - - - - - - - - - - - -
   //Get event by ID
   //- - - - - - - - - - - - - - - - - - - - - - - - - -
-  const getEventById = (id) => {
+  function getEventById(id) {
     return events.find((event) => event.id === id);
-  };
+  }
 
   return (
     <EventContext.Provider

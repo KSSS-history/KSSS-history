@@ -1,16 +1,10 @@
 .DecadeNavigation {
   display: flex;
   justify-content: start;
-  overflow: auto;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-snap-align: start;
   scroll-behavior: smooth;
   gap: 1rem;
-  margin: 1rem;
+  padding: 1.5rem;
 }
-
-/* @media only screen and (min-width: 1024px) {
-  .DecadeNavigation {
-    justify-content: center;
-  }
-} */

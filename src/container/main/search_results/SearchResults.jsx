@@ -12,7 +12,7 @@ const SearchResults = () => {
   const { events, loading, error } = useContext(EventContext);
   const { language } = useContext(LanguageContext);
 
-  // Languge selection ability:
+  // Languge selection ability from the fields:
   const languageOptionFields = {
     swedish: ["fullYear", "headingSv", "introTextSv", "descriptionSv"],
     english: ["fullYear", "headingEn", "introTextEn", "descriptionEn"],
