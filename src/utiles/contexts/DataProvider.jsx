@@ -12,7 +12,6 @@ const DataProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const location = useLocation();
-  console.log(location);
 
   //Get current year as the start point for the sorting logic
   const currentYear = new Date().getFullYear();
