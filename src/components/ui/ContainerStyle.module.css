@@ -1,16 +1,13 @@
-.Hero h1,
-.Hero p {
-  padding: 0 1rem;
+.ContainerStyle {
+  padding: 0.5rem 1rem;
 }
 @media only screen and (min-width: 768px) {
-  .Hero h1,
-  .Hero p {
+  .ContainerStyle {
     padding: 1rem 5rem;
   }
 }
 @media only screen and (min-width: 1025px) {
-  .Hero h1,
-  .Hero p {
-    padding: 0.5rem 15rem;
+  .ContainerStyle {
+    padding: 1rem 15rem;
   }
 }

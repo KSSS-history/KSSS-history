@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { LanguageContext } from "../../../utiles/contexts/LanguageProvider";
-
-import styles from "./Hero.module.css";
+import ContainerStyle from "../../../components/ui/ContainerStyle";
 
 const Hero = () => {
   // Languge selection ability:
@@ -23,10 +22,14 @@ const Hero = () => {
   //Select the appropriate language content
   const { title, description } = languageOption[language];
   return (
-    <article className={styles.Hero}>
-      <h1>{title}</h1>
-      <p>{description}</p>
-    </article>
+    <>
+      <ContainerStyle>
+        <article>
+          <h1>{title}</h1>
+          <p>{description}</p>
+        </article>
+      </ContainerStyle>
+    </>
   );
 };
 

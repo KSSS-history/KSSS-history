@@ -2,10 +2,12 @@ import { useContext } from "react";
 import { LanguageContext } from "../utiles/contexts/LanguageProvider";
 import image from "/images/ksss_flag.webp?url";
 import IntroImage from "../components/ui/IntroImage";
+import ContainerStyle from "../components/ui/ContainerStyle";
 import styles from "./AboutPage.module.css";
 
 const AboutPage = () => {
   const { language } = useContext(LanguageContext);
+
   // Languge selection ability:
   const languageOption = {
     swedish: {
@@ -28,26 +30,30 @@ const AboutPage = () => {
   const { title, description, linkText, link } = languageOption[language];
 
   return (
-    <article className={styles.AboutPage}>
-      <IntroImage src={image} alt="the image of the KSSS flag" />
+    <>
+      <ContainerStyle>
+        <article className={styles.AboutPage}>
+          <IntroImage src={image} alt="the image of the KSSS flag" />
 
-      <h2>{title}</h2>
-      {description.split("\n").map((line, index) => (
-        <h3 key={index}>{line.trim()}</h3>
-      ))}
+          <h2>{title}</h2>
+          {description.split("\n").map((line, index) => (
+            <h3 key={index}>{line.trim()}</h3>
+          ))}
 
-      <h3>
-        {linkText}
-        <a
-          className={styles.AboutPage_link}
-          href="https://www.ksss.se/medlem/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {link}
-        </a>
-      </h3>
-    </article>
+          <h3>
+            {linkText}
+            <a
+              className={styles.AboutPage_link}
+              href="https://www.ksss.se/medlem/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {link}
+            </a>
+          </h3>
+        </article>
+      </ContainerStyle>
+    </>
   );
 };
 

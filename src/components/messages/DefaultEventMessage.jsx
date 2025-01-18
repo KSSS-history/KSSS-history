@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { LanguageContext } from "../../utiles/contexts/LanguageProvider";
 import image from "/images/ksss_flag.webp?url";
 import IntroImage from "../ui/IntroImage";
-
+import ContainerStyle from "../ui/ContainerStyle";
 const DefaultEventMessage = () => {
   const { language } = useContext(LanguageContext);
 
@@ -16,7 +16,7 @@ const DefaultEventMessage = () => {
     },
     english: {
       line1:
-        "There are currently no historical events for this year to display.",
+        "There are currently no historical events for this period to display.",
       line2:
         "We invite you to explore the KSSS historical timeline or search for a specific event in our rich history dating back to 1830.",
     },
@@ -27,9 +27,11 @@ const DefaultEventMessage = () => {
 
   return (
     <article>
-      <IntroImage src={image} alt="the image of the KSSS flag" />
-      <h2>{line1}</h2>
-      <h2>{line2}</h2>
+      <ContainerStyle>
+        <IntroImage src={image} alt="the image of the KSSS flag" />
+        <h2>{line1}</h2>
+        <h3>{line2}</h3>
+      </ContainerStyle>
     </article>
   );
 };

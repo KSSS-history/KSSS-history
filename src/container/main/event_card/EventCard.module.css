@@ -45,7 +45,7 @@
     padding: 1rem 5rem 2rem 5rem;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1025px) {
   .EventCard {
     padding: 1rem 15rem 2rem 15rem;
   }
