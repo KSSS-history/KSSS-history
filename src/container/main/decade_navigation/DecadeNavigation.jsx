@@ -64,7 +64,7 @@ const DecadeNavigation = () => {
       activeButtonRef.current.scrollIntoView({
         behavior: "smooth",
         inline: "center",
-        block: "start",
+        block: "end",
       });
     }
 
