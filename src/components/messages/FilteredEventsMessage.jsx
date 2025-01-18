@@ -10,12 +10,12 @@ const FilteredEventsMessage = () => {
   const languageOption = {
     swedish: {
       messageGeneral: `Det finns ${filteredEvents.length} händelser under den här perioden.`,
-      messageCase0: "Tyvärr finns det inga händelser under den här perioden.",
+      messageCase0: "",
       messageCase1: "Det finns bara 1 händelse under den här perioden.",
     },
     english: {
       messageGeneral: `There are ${filteredEvents.length} events for this period.`,
-      messageCase0: "Unfortunately, there are no events for this period.",
+      messageCase0: "",
       messageCase1: "There is only 1 event for this period.",
     },
   };
