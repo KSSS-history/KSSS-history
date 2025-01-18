@@ -34,14 +34,16 @@ const Header = () => {
           <img className={styles.ksssLogo} src={logo} alt="KSSS Logotype" />
         </Link>
         <div className={styles.Header_nav_links}>
-          <span>{heading}</span>
+          <Link to="/">
+            <span className={styles.Header_nav_link}>{heading}</span>
+          </Link>
           <a
             href="https://www.ksss.se/"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.Header_nav_title}
           >
-            <span className={styles.Header_nav_link}>KSSS</span>
+            <span className={styles.Header_nav_link_to_KSSS}>KSSS</span>
             <PiArrowUpRight size="1em" color="black" />
           </a>
           <LanguageToggle />

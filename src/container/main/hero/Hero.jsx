@@ -3,9 +3,9 @@ import { LanguageContext } from "../../../utiles/contexts/LanguageProvider";
 import ContainerStyle from "../../../components/ui/ContainerStyle";
 
 const Hero = () => {
-  // Languge selection ability:
   const { language } = useContext(LanguageContext);
 
+  // Languge selection ability:
   const languageOption = {
     swedish: {
       title: "KSSS Historia",

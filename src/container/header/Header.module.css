@@ -29,6 +29,10 @@
 }
 
 .Header_nav_link {
+  color: var(--clr-primary);
+  letter-spacing: normal;
+}
+.Header_nav_link_to_KSSS {
   text-decoration: underline;
   color: var(--clr-text-primary);
 }

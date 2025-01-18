@@ -1,0 +1,22 @@
+.ContainerStyle {
+  margin: auto;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--clr-shadow);
+}
+
+.ContainerStyle_num {
+  padding: 1rem;
+  font-size: 8rem;
+  border-top: 3px solid;
+  border-bottom: 3px solid;
+}
+
+.ContainerStyle_error {
+  margin-bottom: 2rem;
+}
+.ContainerStyle_link {
+  color: var(--clr-primary-focused);
+  font-size: 1rem;
+}

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { EventContext } from "../../utiles/contexts/DataProvider";
 import { LanguageContext } from "../../utiles/contexts/LanguageProvider";
+import ContainerStyle from "../ui/ContainerStyle";
 
 const FilteredEventsMessage = () => {
   const { filteredEvents } = useContext(EventContext);
@@ -37,9 +38,11 @@ const FilteredEventsMessage = () => {
   }
 
   return (
-    <div>
-      <p>{message}</p>
-    </div>
+    <>
+      <ContainerStyle>
+        <p>{message}</p>
+      </ContainerStyle>
+    </>
   );
 };
 

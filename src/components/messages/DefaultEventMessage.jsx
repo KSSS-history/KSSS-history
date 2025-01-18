@@ -10,7 +10,7 @@ const DefaultEventMessage = () => {
   const languageOption = {
     swedish: {
       line1:
-        "För närvarande finns det inga historiska händelser från detta år att visa.",
+        "För närvarande finns det inga historiska händelser från denna period att visa.",
       line2:
         "Vi inbjuder er att utforska KSSS historiska tidlinje eller söka efter en specifik händelse i vår rika historia som går tillbaka till 1830.",
     },
