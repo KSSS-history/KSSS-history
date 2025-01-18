@@ -1,3 +1,5 @@
+import { AnimatePresence } from "motion/react";
+import * as motion from "motion/react-client";
 import { useContext } from "react";
 import { LanguageContext } from "../../utiles/contexts/LanguageProvider";
 import image from "../../assets/ksss_flag.webp";
@@ -26,13 +28,22 @@ const DefaultEventMessage = () => {
   const { line1, line2 } = languageOption[language];
 
   return (
-    <article>
-      <ContainerStyle>
-        <IntroImage src={image} alt="the image of the KSSS flag" />
-        <h2>{line1}</h2>
-        <h3>{line2}</h3>
-      </ContainerStyle>
-    </article>
+    <>
+      <AnimatePresence mode="wait">
+        <motion.article
+          initial={{ y: 10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -10, opacity: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <ContainerStyle>
+            <IntroImage src={image} alt="the image of the KSSS flag" />
+            <h2>{line1}</h2>
+            <h3>{line2}</h3>
+          </ContainerStyle>
+        </motion.article>
+      </AnimatePresence>
+    </>
   );
 };
 

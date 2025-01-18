@@ -1,3 +1,6 @@
+import { AnimatePresence } from "motion/react";
+import * as motion from "motion/react-client";
+
 import { useContext } from "react";
 import { LanguageContext } from "../../../utiles/contexts/LanguageProvider";
 import ButtonCTA from "../../../components/buttons/ButtonCTA";
@@ -31,24 +34,34 @@ const EventCard = ({ event }) => {
   const { heading, introText } = languageOption[language];
 
   return (
-    <article className={styles.EventCard}>
-      <div className={styles.EventCard_year}>{event.fullYear}</div>
-      <div className={styles.EventCard_content}>
-        <h2>{heading}</h2>
-        <h3>{introText}</h3>
+    <>
+      <AnimatePresence mode="wait">
+        <motion.article
+          initial={{ y: 10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -10, opacity: 0 }}
+          transition={{ duration: 0.25 }}
+          className={styles.EventCard}
+        >
+          <div className={styles.EventCard_year}>{event.fullYear}</div>
+          <div className={styles.EventCard_content}>
+            <h2>{heading}</h2>
+            <h3>{introText}</h3>
 
-        {hasDetails && <ButtonCTA eventId={event.id} />}
-      </div>
-      {event.introImage?.file?.url && (
-        <div className={styles.EventCard_image_container}>
-          <img
-            className={styles.EventCard_image}
-            src={event.introImage.file.url}
-            alt={event.introImage.title || "The Event image"}
-          />
-        </div>
-      )}
-    </article>
+            {hasDetails && <ButtonCTA eventId={event.id} />}
+          </div>
+          {event.introImage?.file?.url && (
+            <div className={styles.EventCard_image_container}>
+              <img
+                className={styles.EventCard_image}
+                src={event.introImage.file.url}
+                alt={event.introImage.title || "The Event image"}
+              />
+            </div>
+          )}
+        </motion.article>
+      </AnimatePresence>
+    </>
   );
 };
 

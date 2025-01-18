@@ -1,3 +1,5 @@
+import { AnimatePresence } from "motion/react";
+import * as motion from "motion/react-client";
 import { useContext } from "react";
 import { LanguageContext } from "../../utiles/contexts/LanguageProvider";
 import { Link } from "react-router-dom";
@@ -6,7 +8,7 @@ import { Link } from "react-router-dom";
 import { createPortal } from "react-dom";
 import styles from "./MenuList.module.css";
 
-const MenuList = ({ toggleMenuButton }) => {
+const MenuList = ({ isVisible, toggleMenuButton }) => {
   // Languge selection ability:
   const { language } = useContext(LanguageContext);
 
@@ -32,14 +34,24 @@ const MenuList = ({ toggleMenuButton }) => {
   return (
     <>
       {createPortal(
-        <ul className={styles.MenuList}>
-          <Link to="/" onClick={handleItemClick}>
-            <li>{home}</li>
-          </Link>
-          <Link to="/aboutksss" onClick={handleItemClick}>
-            <li>{about}</li>
-          </Link>
-        </ul>,
+        <AnimatePresence mode="wait">
+          {isVisible && (
+            <motion.ul
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -10, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className={styles.MenuList}
+            >
+              <Link to="/" onClick={handleItemClick}>
+                <li>{home}</li>
+              </Link>
+              <Link to="/aboutksss" onClick={handleItemClick}>
+                <li>{about}</li>
+              </Link>
+            </motion.ul>
+          )}
+        </AnimatePresence>,
         document.body
       )}
     </>
