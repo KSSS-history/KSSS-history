@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { LanguageContext } from "../../utiles/contexts/LanguageProvider";
-import image from "/images/ksss_flag.webp?url";
+import image from "../../assets/ksss_flag.webp";
 import IntroImage from "../ui/IntroImage";
 import ContainerStyle from "../ui/ContainerStyle";
 const DefaultEventMessage = () => {
