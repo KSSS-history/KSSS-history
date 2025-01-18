@@ -68,11 +68,13 @@ const EventDetails = ({ event }) => {
             )}
         </div>
       )}
-      {/* The reach text from Contentful MUST renders inside a <div>, 
+      <ContainerStyle>
+        {/* The reach text from Contentful MUST renders inside a <div>, 
       because text retrieves as separate <p> elements and it is prohibited to nestle <p> inside <p>. */}
-      <div className={styles.EventDetails_description}>
-        {documentToReactComponents(description)}
-      </div>
+        <div className={styles.EventDetails_description}>
+          {documentToReactComponents(description)}
+        </div>
+      </ContainerStyle>
     </article>
   );
 };
