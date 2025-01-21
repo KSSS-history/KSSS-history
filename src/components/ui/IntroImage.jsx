@@ -5,7 +5,7 @@ import styles from "./IntroImage.module.css";
 
 const IntroImage = (props) => {
   return (
-    <div>
+    <div className={styles.IntroImage_wrapper}>
       <LazyLoadImage
         className={styles.IntroImage}
         loading="lazy"
