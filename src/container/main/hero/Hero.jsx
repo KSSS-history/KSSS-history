@@ -10,7 +10,7 @@ const Hero = () => {
     swedish: {
       title: "KSSS Historia",
       description:
-        "KSSS är Sveriges största båtklubb och även en av världens största båtklubbar med cirka 6000 medlemmar, varav 2500 juniorer.",
+        "KSSS är Sveriges största segelsällskap och även en av världens största segelsällskap med cirka 6000 medlemmar, varav 2500 juniorer.",
     },
     english: {
       title: "KSSS History",
