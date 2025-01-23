@@ -1,6 +1,7 @@
 # Ignore environment variable files
 .env
-.env.production
+.env.*
+*.env.*
 
 # Ignore log files
 # Logs
