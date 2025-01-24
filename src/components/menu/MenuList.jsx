@@ -16,24 +16,15 @@ const MenuList = ({ isVisible, toggleMenuButton }) => {
     swedish: {
       home: "KSSS Historia",
       about: "Om oss",
-      race: "Kappsegling",
-      clubhouse: "Klubbhus",
-      celebrations: "Fester",
-      camp: "Läger",
     },
     english: {
       home: "KSSS History",
       about: "About us",
-      race: "Sailing race",
-      clubhouse: "Clubhouse",
-      celebrations: "Celebrations",
-      camp: "The Camp",
     },
   };
 
   //Select the appropriate language content
-  const { home, about, race, clubhouse, celebrations, camp } =
-    languageOption[language];
+  const { home, about } = languageOption[language];
 
   // Close the menu when the menu item is chosen
   function handleItemClick() {
@@ -54,18 +45,6 @@ const MenuList = ({ isVisible, toggleMenuButton }) => {
             >
               <Link to="/" onClick={handleItemClick}>
                 <li>{home}</li>
-              </Link>
-              <Link to="/" onClick={handleItemClick}>
-                <li>{race}</li>
-              </Link>
-              <Link to="/" onClick={handleItemClick}>
-                <li>{clubhouse}</li>
-              </Link>
-              <Link to="/" onClick={handleItemClick}>
-                <li>{celebrations}</li>
-              </Link>
-              <Link to="/" onClick={handleItemClick}>
-                <li>{camp}</li>
               </Link>
               <Link to="/aboutksss" onClick={handleItemClick}>
                 <li>{about}</li>
