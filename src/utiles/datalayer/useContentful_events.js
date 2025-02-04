@@ -1,6 +1,10 @@
+//. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+//This is the data fetching for the EVENTS fetched from Contentful
+//. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+
 import client from "./client"
 
-const useContentful = () => {
+const useContentful_events = () => {
 
 
     //function to fetch all events from "KSSS Event" content type:
@@ -55,14 +59,14 @@ const useContentful = () => {
 
             //- - - - - - - - - - - - - - - - - - - - - - - - - - 
             // Log each item in the array individually
-            sanitizedEntries.forEach((entry, index) => {
-                console.log(`SANITIZED ENTRY ${index + 1}:`, entry);
-            });
+            // sanitizedEntries.forEach((entry, index) => {
+            //     console.log(`SANITIZED ENTRY from use_Contenful ${index + 1}:`, entry);
+            // });
             //- - - - - - - - - - - - - - - - - - - - - - - - - -
             return sanitizedEntries;
 
         } catch (error) {
-            console.log(`Error: trying to fetch events ${error}`);
+            console.log('Error: trying to fetch events:', error);
         }
 
     };
@@ -71,4 +75,4 @@ const useContentful = () => {
 }
 
 
-export default useContentful;
+export default useContentful_events;

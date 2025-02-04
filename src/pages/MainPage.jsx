@@ -1,4 +1,4 @@
-import Hero from "../container/main/hero/Hero";
+import HeroProvider from "../container/main/hero/HeroProvider";
 import SearchBar from "../container/main/search_bar/SearchBar";
 import DecadeNavigation from "../container/main/decade_navigation/DecadeNavigation";
 import EventsProvider from "../container/main/events_provider/EventsProvider";
@@ -7,7 +7,7 @@ const MainPage = () => {
   return (
     <>
       <main>
-        <Hero />
+        <HeroProvider />
         <SearchBar />
         <DecadeNavigation />
         <EventsProvider />
