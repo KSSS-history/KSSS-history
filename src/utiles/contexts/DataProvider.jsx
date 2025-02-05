@@ -1,12 +1,16 @@
+//. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+//This is the data provider for the Events fetched from Contentful
+//. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
 import { createContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import useContentful from "../datalayer/useContentful";
+import useContentful_events from "../datalayer/useContentful_events";
 
 //Create the context for the context object
 export const EventContext = createContext();
 
 const DataProvider = ({ children }) => {
-  const { getData } = useContentful();
+  const { getData } = useContentful_events();
   const [events, setEvents] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [loading, setLoading] = useState(true);

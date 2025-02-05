@@ -9,7 +9,7 @@ import EventCard from "../event_card/EventCard";
 
 const EventsProvider = () => {
   const { filteredEvents, loading, error } = useContext(EventContext);
-  if (loading) return <div>Loading....</div>;
+  if (loading) return <div>Loading Hero....</div>;
   if (error) return <div>Error accured in Data Provider: {error.message}</div>;
 
   return (

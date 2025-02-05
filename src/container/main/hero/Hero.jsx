@@ -1,21 +1,25 @@
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { LanguageContext } from "../../../utiles/contexts/LanguageProvider";
 import ContainerStyle from "../../../components/ui/ContainerStyle";
 
-const Hero = () => {
+// the documentToReactComponents helps to display the reach text from Contentful efficiently.
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - -
+//Props come from the parent - HeroProvider.jsx
+//- - - - - - - - - - - - - - - - - - - - - - - - - - -
+const Hero = ({ hero }) => {
   const { language } = useContext(LanguageContext);
 
   // Languge selection ability:
   const languageOption = {
     swedish: {
-      title: "KSSS Historia",
-      description:
-        "KSSS är Sveriges största segelsällskap och även en av världens största segelsällskap med cirka 6000 medlemmar, varav 2500 juniorer.",
+      title: hero.titleSv,
+      description: hero.descriptionSv,
     },
     english: {
-      title: "KSSS History",
-      description:
-        "KSSS is Sweden's largest and one of the world's largest yacht clubs with about 6000 members, including 2500 juniors.",
+      title: hero.titleEn,
+      description: hero.descriptionEn,
     },
   };
 
@@ -26,7 +30,9 @@ const Hero = () => {
       <ContainerStyle>
         <article>
           <h1>{title}</h1>
-          <p>{description}</p>
+          {/* The reach text from Contentful MUST renders inside a <div>, 
+                because text retrieves as separate <p> elements and it is prohibited to nestle <p> inside <p>. */}
+          <div>{documentToReactComponents(description)}</div>
         </article>
       </ContainerStyle>
     </>

@@ -9,7 +9,7 @@ const EventDetailsProvider = () => {
   const { getEventById, loading, error } = useContext(EventContext);
   const event = getEventById(id);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div>Loading Details...</div>;
   if (error)
     return <div>Error accured in Event Details Provider: {error.message}</div>;
   if (!event) return <div>The Event not found.</div>;
