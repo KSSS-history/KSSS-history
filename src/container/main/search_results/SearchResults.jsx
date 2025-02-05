@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
+
 import { EventContext } from "../../../utiles/contexts/DataProvider";
 import { LanguageContext } from "../../../utiles/contexts/LanguageProvider";
-import Hero from "../hero/Hero";
+
+import HeroProvider from "../hero/HeroProvider";
 import SearchBar from "../search_bar/SearchBar";
 import EventCard from "../event_card/EventCard";
 import styles from "./SearchResults.module.css";
@@ -51,12 +53,12 @@ const SearchResults = () => {
     return searchText.includes(query.toLowerCase());
   });
 
-  if (loading) return <div>Loading....</div>;
+  if (loading) return <div>Loading Search....</div>;
   if (error) return <div>Error accured in Search Results: {error.message}</div>;
 
   return (
     <>
-      <Hero />
+      <HeroProvider />
       <SearchBar />
       <div className={styles.SearchResults}>
         {search}

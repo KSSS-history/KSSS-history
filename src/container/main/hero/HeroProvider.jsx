@@ -1,28 +1,15 @@
 //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-//This is the data provider for the Hero Section fetched from Contentful.
+//This is the functional component that takes data from Hero_DataProvider,
+// and send it to Hero section as the props.
 //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
-import { useState, useEffect } from "react";
-import useContentful_hero from "../../../utiles/datalayer/useContentful_hero";
+import { useContext } from "react";
+import { HeroContext } from "../../../utiles/contexts/Hero_DataProvider.jsx";
+
 import Hero from "./Hero.jsx";
 
 const HeroProvider = () => {
-  const { getHero } = useContentful_hero();
-  const [heroData, setHeroData] = useState([]);
-
-  useEffect(() => {
-    const fetctHeroData = async () => {
-      try {
-        const response = await getHero();
-        console.log("Fetched Hero Data:", response); // Check what is fetched
-        setHeroData(response);
-      } catch (err) {
-        console.error("Error fetching Hero Data:", err);
-        setHeroData([]);
-      }
-    };
-    fetctHeroData();
-  }, []);
+  const { heroData } = useContext(HeroContext);
 
   return (
     <>
