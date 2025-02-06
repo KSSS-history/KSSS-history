@@ -1,0 +1,7 @@
+.ReachTextStyle p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.ReachTextStyle a {
+  color: var(--clr-primary-focused);
+}

@@ -4,8 +4,10 @@ import { useContext } from "react";
 import { EventContext } from "../../../utiles/contexts/DataProvider";
 
 import FilteredEventsMessage from "../../../components/messages/FilteredEventsMessage";
-import DefaultEventMessage from "../../../components/messages/DefaultEventMessage";
+import FallbackProvider from "../../../components/messages/fallback_provider/FallbackProvider";
 import EventCard from "../event_card/EventCard";
+
+// import FallbackProvider from "../../../components/messages/FallbackProvider";
 
 const EventsProvider = () => {
   const { filteredEvents, loading, error } = useContext(EventContext);
@@ -16,7 +18,7 @@ const EventsProvider = () => {
     <>
       <FilteredEventsMessage />
       {filteredEvents.length === 0 ? (
-        <DefaultEventMessage />
+        <FallbackProvider />
       ) : (
         <article>
           {filteredEvents.map((event) => (

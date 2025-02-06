@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { LanguageContext } from "../../../utiles/contexts/LanguageProvider";
 import ContainerStyle from "../../../components/ui/ContainerStyle";
 import IntroImage from "../../../components/ui/IntroImage";
+import richTextRenderOptions from "../../../utiles/helpers/richTextRenderOptions";
 
 import styles from "./EventDetails.module.css";
 
@@ -72,7 +73,7 @@ const EventDetails = ({ event }) => {
         {/* The reach text from Contentful MUST renders inside a <div>, 
       because text retrieves as separate <p> elements and it is prohibited to nestle <p> inside <p>. */}
         <div className={styles.EventDetails_description}>
-          {documentToReactComponents(description)}
+          {documentToReactComponents(description, richTextRenderOptions)}
         </div>
       </ContainerStyle>
     </article>

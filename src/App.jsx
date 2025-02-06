@@ -12,6 +12,7 @@ import AboutPage from "./pages/AboutPage";
 import NoPage from "./pages/NoPage";
 import Footer from "./container/footer/Footer";
 import Hero_DataProvider from "./utiles/contexts/Hero_DataProvider";
+import FallbackMessage_DataProvider from "./utiles/contexts/FallbackMessage_DataProvider";
 
 function App() {
   return (
@@ -19,18 +20,23 @@ function App() {
       <DataProvider>
         <LanguageProvider>
           <Hero_DataProvider>
-            <Header />
-            <Routes>
-              <Route path="/" element={<MainPage />}>
-                <Route path="/decade/:decade" element={<DecadeNavigation />} />
-              </Route>
-              <Route path="/search/:query" element={<SearchResults />} />
+            <FallbackMessage_DataProvider>
+              <Header />
+              <Routes>
+                <Route path="/" element={<MainPage />}>
+                  <Route
+                    path="/decade/:decade"
+                    element={<DecadeNavigation />}
+                  />
+                </Route>
+                <Route path="/search/:query" element={<SearchResults />} />
 
-              <Route path="event/:id" element={<EventPage />} />
-              <Route path="/aboutksss" element={<AboutPage />} />
-              <Route path="*" element={<NoPage />} />
-            </Routes>
-            <Footer />
+                <Route path="event/:id" element={<EventPage />} />
+                <Route path="/aboutksss" element={<AboutPage />} />
+                <Route path="*" element={<NoPage />} />
+              </Routes>
+              <Footer />
+            </FallbackMessage_DataProvider>
           </Hero_DataProvider>
         </LanguageProvider>
       </DataProvider>

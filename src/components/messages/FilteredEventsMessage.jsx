@@ -10,32 +10,26 @@ const FilteredEventsMessage = () => {
   // Languge selection ability:
   const languageOption = {
     swedish: {
-      messageGeneral: `Det finns ${filteredEvents.length} händelser under den här perioden.`,
-      messageCase0: "",
-      messageCase1: "Det finns bara 1 händelse under den här perioden.",
+      messageEvents: `Det finns ${filteredEvents.length} händelser under den här perioden.`,
+      messageOneEvent: "Det finns bara 1 händelse under den här perioden.",
     },
     english: {
-      messageGeneral: `There are ${filteredEvents.length} events for this period.`,
-      messageCase0: "",
-      messageCase1: "There is only 1 event for this period.",
+      messageEvents: `There are ${filteredEvents.length} events for this period.`,
+      messageOneEvent: "There is only 1 event for this period.",
     },
   };
 
   //Select the appropriate language content
-  const { messageGeneral, messageCase0, messageCase1 } =
-    languageOption[language];
+  const { messageEvents, messageOneEvent } = languageOption[language];
 
-  let message = messageGeneral;
-  switch (filteredEvents.length) {
-    case 0:
-      message = messageCase0;
-      break;
-    case 1:
-      message = messageCase1;
-      break;
-    default:
-      break;
+  //Conditional for appearing founded events:
+  let message = "";
+  if (filteredEvents.length === 1) {
+    message = messageOneEvent;
+  } else if (filteredEvents.length > 1) {
+    message = messageEvents;
   }
+  if (!message) return null;
 
   return (
     <>
