@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { FallbackContext } from "../../../utiles/contexts/FallbackMessage_DataProvider.jsx";
 import FallbacMessage from "../fallback_message/FallbackMessage.jsx";
 
-const HeroProvider = () => {
+const FallbackProvider = () => {
   const { fallbackData } = useContext(FallbackContext);
 
   return (
@@ -19,4 +19,4 @@ const HeroProvider = () => {
   );
 };
 
-export default HeroProvider;
+export default FallbackProvider;

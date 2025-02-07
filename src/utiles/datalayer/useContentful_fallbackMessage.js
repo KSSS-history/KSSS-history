@@ -34,9 +34,9 @@ const useContentful_fallbackMessage = () => {
                 }
             })
 
-            sanitizedFallbackData.forEach((entry, index) => {
-                console.log(`SANITIZED fallback from use_Contenful ${index + 1}:`, entry);
-            });
+            // sanitizedFallbackData.forEach((entry, index) => {
+            //     console.log(`SANITIZED fallback from use_Contenful ${index + 1}:`, entry);
+            // });
 
             return sanitizedFallbackData;
 

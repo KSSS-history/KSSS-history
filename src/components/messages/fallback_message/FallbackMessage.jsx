@@ -18,6 +18,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const FallbackMessage = ({ fallback }) => {
   const { language } = useContext(LanguageContext);
+  console.log("FALLBACK Data got as props to the page", fallback);
 
   // Languge selection ability:
   const languageOption = {
